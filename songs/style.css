@@ -1,0 +1,283 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+.container {
+  position: relative;
+  background: transparent;
+  border: none;
+  margin: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+}
+
+body {
+  font-family: Arial;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header {
+  padding: 0 20px;
+  background: #FF5964;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 1px;
+  width: 100%;
+  z-index: 3;
+  border-bottom: 3px solid white;
+}
+
+#brand {
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul a {
+  color: white;
+}
+
+ul a:hover {
+  text-decoration-line: underline;
+}
+
+ul li {
+  padding: 5px;
+  margin-left: 10px;
+  display: block;
+}
+
+#register {
+  background: #1B065E;
+  color: white;
+  border-radius: 50px;
+  padding: 11px;
+  transition: 0.5s;
+  border: none;
+  cursor: pointer;
+}
+
+#register:hover {
+  background: #4a20d5;
+}
+
+#menu-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+  transition: 1s;
+}
+
+#menu-icon div {
+  width: 40px;
+  height: 3px;
+  background: white;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+  width: 70px;
+  transition: 0.5s;
+}
+
+.open .bar2 {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+  width: 70px;
+  transition: 0.5s;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  margin-top: 5px;
+  transition: 0.5s;
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 270px;
+  transition: 0.3s;
+  z-index: 7;
+}
+
+.mobile-menu {
+  position: absolute;
+  transition: 0.3s;
+  top: 70px;
+  left: 0;
+  height: 100vh;
+  width: 0px;
+  line-height: 30px;
+  background: #FF5964;
+  z-index: 7;
+}
+
+.bold-selected {
+  font-weight: 900;
+}
+
+.sidebar {
+  width: 350px;
+  position: fixed;
+  height: calc(100vh - 70px);
+  background-color: white;
+  border: none;
+  padding: 10px;
+  line-height: 30px;
+  box-shadow: 5px 0 7.5px lightgray;
+}
+
+.content-container {
+  width: calc(100vw - 350px);
+  /* full - sidebar width */
+
+  translate: 350px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+  padding-top: 15px;
+}
+
+.songs-header {
+  padding: 7.5px;
+  text-align: center;
+  border-bottom: 3px solid black;
+  margin-bottom: 5px;
+}
+
+.sidebar-selector-text {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.sidebar-selector-text:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.mobile-sidebar-selector {
+  width: 100vw;
+  height: 50px;
+  background-color: white;
+  position: fixed;
+  z-index: 1;
+  display: none;
+  box-shadow: 0 5px 7.5px lightgray;
+}
+
+.heading {
+  font-size: 30pt;
+  text-align: center;
+}
+
+.big-heading {
+  font-size: 40pt;
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 3px solid black;
+}
+
+.white {
+  color: black;
+  text-decoration: none;
+  width: 100%;
+  background-color: blue;
+}
+
+.section {
+  padding: 7.5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.section:hover {
+  background-color: lightgray;
+}
+
+.sidebar-selector {
+  
+}
+
+/*For phone*/
+@media only screen and (max-width: 600px) {
+  header nav {
+    display: none;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .sidebar {
+    display: none;
+    height: calc(100vh - 120px);
+  }
+
+  .content-container {
+    width: 100vw;
+    translate: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+
+  }
+
+  ul li {
+    display: none;
+  }
+
+  .open ul li {
+    display: block;
+  }
+
+  .mobile-sidebar-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  html {
+    scroll-padding-top: 125px;
+  }
+
+  .content-container {
+    padding-top: 55px;
+  }
+
+  .mobile-menu {
+    height: 100vh;
+  }
+
+  .open .sidebar {
+    display: block;
+  }
+}

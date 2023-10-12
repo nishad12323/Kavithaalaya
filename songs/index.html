@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FF5964" />
+  <title>Songs - Kalalays Music</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div id="brand"><a style="color: white" href="/">Kalalaya Music School</a></div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a class="bold-selected" href="/songs">Songs</a></li>
+          <li><a href="/#services">Classes</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#contact">Contact us</a></li>
+          <li><button id="register" onclick="register()">Register now</button></li>
+        </ul>
+      </nav>
+
+      <div id="menu-icon" onclick="toggleMobileMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+
+        <ul class="mobile-menu">
+          <li><a href="/">Home</a></li>
+          <li><a class="bold-selected" href="/songs">Songs</a></li>
+          <li><a href="/#services">Classes</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#contact">Contact us</a></li>
+          <li><button id="register" onclick="register()">Register now</button></li>
+        </ul>
+      </div>
+
+    </header>
+    <div class="mobile-sidebar-selector">
+      <div class="sidebar-selector">
+        <select class="">
+          <option value="0">Select car:</option>
+          <option value="1">Audi</option>
+          <option value="2">BMW</option>
+          <option value="3">Citroen</option>
+          <option value="4">Ford</option>
+          <option value="5">Honda</option>
+          <option value="6">Jaguar</option>
+          <option value="7">Land Rover</option>
+          <option value="8">Mercedes</option>
+          <option value="9">Mini</option>
+          <option value="10">Nissan</option>
+          <option value="11">Toyota</option>
+          <option value="12">Volvo</option>
+        </select>
+      </div>
+    </div>
+
+
+    <dialog open class="sidebar open" id="sidebar">
+
+      <p class="songs-header">Songs</p>
+      <div class="section" onclick="document.getElementById('song1').scrollIntoView(); window.location.hash='song1';">
+        Song 1</div>
+      <div class="section" onclick="document.getElementById('song1').scrollIntoView(); window.location.hash='song1';">
+        Song 2</div>
+      <div class="section" onclick="document.getElementById('song1').scrollIntoView(); window.location.hash='song1';">
+        Song 3</div>
+      <div class="section" onclick="document.getElementById('song1').scrollIntoView(); window.location.hash='song1';">
+        Song 4</div>
+      <div class="section" onclick="document.getElementById('song1').scrollIntoView(); window.location.hash='song1';">
+        Song 5</div>
+      <div class="section" onclick="document.getElementById('song1').scrollIntoView(); window.location.hash='song1';">
+        Song 6</div>
+      <div class="section" onclick="document.getElementById('song1').scrollIntoView(); window.location.hash='song1';">
+        Song 7</div>
+      <div class="section" onclick="document.getElementById('song1').scrollIntoView(); window.location.hash='song1';">
+        Song 8</div>
+      <div class="section" onclick="document.getElementById('song1').scrollIntoView(); window.location.hash='song1';">
+        Song 9</div>
+      <div class="section" onclick="document.getElementById('song1').scrollIntoView(); window.location.hash='song1';">
+        Song 10</div>
+    </dialog>
+    <div class="content-container">
+      <h1 class="big-heading">Songs</h1>
+      <div id="song1">
+        <h1 class="heading">Song 1</h1><br>
+        <span class="horizontal-line"></span>
+        <span class="song-section">
+          <h1>pallavi</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+        </span><br>
+        <span class="song-section">
+          <h1>anupallavi</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+        </span><br>
+        <span class="song-section">
+          <h1>charanam 1</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+        </span><br>
+        <span class="song-section">
+          <h1>charanam 2</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+        </span><br>
+        <span class="song-section">
+          <h1>charanam 3</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+
+        </span><br>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
