@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/script.js" defer></script>
+    <title>Kavithaalaya</title>
+  </head>
+
+  <body>
+    <header>
+      <div id="brand">
+        <a style="color: white" href="/">Kavithaalaya Music School</a>
+      </div>
+      <nav>
+        <ul class="nav">
+          <li><a class="bold-selected" href="/">Home</a></li>
+          <li><a href="/songs/songs">Songs</a></li>
+          <li><a href="/#services">Classes</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#contact">Contact us</a></li>
+          <li>
+            <button id="register" onclick="register()">Register now</button>
+          </li>
+        </ul>
+      </nav>
+
+      <div id="menu-icon" onclick="toggleMobileMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+
+        <ul class="mobile-menu">
+          <li><a class="bold-selected" href="/">Home</a></li>
+          <li><a href="/songs/songs">Songs</a></li>
+          <li><a href="/#services">Classes</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#contact">Contact us</a></li>
+          <li>
+            <button id="register" onclick="register()">Register now</button>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <center class="header-img-container">
+      <img src="kalalayaBanner.png" class="heading-img" />
+      <h1 class="header-img-txt">
+        Kavithaalaya
+        <p class="music-school">Music School</p>
+      </h1>
+      <button id="register" class="register-on-heading" onclick="register()">
+        Register now
+      </button>
+    </center>
+    <div class="content-container">
+      <div class="about-container">
+        <img src="profilePic.jpg" alt="Smt. Kavitha Venkataraman" id="about" />
+        <div class="about-text-container">
+          <h1 class="heading">About</h1>
+          <p style="text-align: justify">
+            Kavithaalaya was established by Smt. Kavitha Venkataraman, a
+            seasoned instructor with 15 years of experience in teaching Carnatic
+            vocal lessons to students ranging from 5-year-olds to adults and
+            music enthusiasts. Her musical odyssey commenced in her early years
+            under the tutelage of Smt. Susheela Sridhar, and she has been
+            privileged to receive guidance from numerous distinguished
+            artists.<br /><br />
+            Smt. Kavitha has graced the stages of various prestigious venues in
+            Chennai and the Livermore temple in California, among others,
+            showcasing her musical prowess. Her achievements include several
+            accolades in the realm of music.
+          </p>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <div class="services-container">
+        <img src="Collage.jpg" alt="Collage" class="collage" />
+
+        <div class="classes-container">
+          <h1 class="heading" id="services">Classes</h1>
+          <p style="text-align: justify">
+            In Kavithaalaya, vocal Carnatic singing classes are offered for kids
+            and adults, 6 years and above. Both in-person and online
+            classes are provided.
+          </p>
+        </div>
+      </div>
+
+      <br />
+
+      <h1 class="heading" id="contact">Contact</h1>
+      <p style="text-align: center">
+        Phone: <a href="tel:+15551234567" class="link">### ### ####</a><br>
+        Email: <a href="mailto:kavitharamprasath@yahoo.com" class="link">kavitharamprasath@yahoo.com</a>
+      </p>
+    </div>
+
+    <footer>
+      <div class="footer-text">
+        <!-- By visiting this site, you agree to the
+        <a href="" class="policies">Privacy Policy</a><br /> -->
+        Copyright 2024 • Kavithaalaya Music School © All rights reserved<br />
+        <div style="height: 15px"></div>
+        <div class="powered-by">Powered by Nishad Bangole</div>
+      </div>
+    </footer>
+  </body>
+</html>

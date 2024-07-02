@@ -1,0 +1,376 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  position: relative;
+  background: transparent;
+  border: none;
+  margin: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  transition: .5s;
+}
+
+.header-img-container {
+  display: grid;
+  height: fit-content;
+}
+
+.header-img-txt {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0 auto;
+  margin-top: 15%;
+  translate: -13.60vw -13.60vw;
+  font-weight: bold;
+  font-family: "comic sans ms";
+  font-size: 6.5vw;
+  color: maroon;
+}
+
+.music-school {
+  font-size: 2.25vw;
+  translate: 0 1vh;
+}
+
+.register-on-heading {
+  width: fit-content;
+  translate: 5vw -11vw;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  font-family: "nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header {
+  padding: 0 20px;
+  background: maroon;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 1px;
+  width: 100%;
+  z-index: 3;
+  border-bottom: 3px solid white;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+#brand {
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul a {
+  color: white;
+}
+
+ul a:hover {
+  text-decoration-line: underline;
+}
+
+ul li {
+  padding: 5px;
+  margin-left: 10px;
+  display: block;
+}
+
+#register {
+  background: #1B065E;
+  color: white;
+  border-radius: 50px;
+  padding: 11px;
+  transition: 0.165s;
+  cursor: pointer;
+  border: none;
+}
+
+#register:hover {
+  background: #4a20d5;
+}
+
+#menu-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+  transition: 1s;
+}
+
+#menu-icon div {
+  width: 40px;
+  height: 3px;
+  background: white;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-7px, 6.5px);
+  transform: rotate(-45deg) translate(-7px, 6.5px);
+  width: 70px;
+  transition: 0.5s;
+}
+
+.open .bar2 {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -4px);
+  transform: rotate(45deg) translate(-6px, -4px);
+  width: 70px;
+  transition: 0.5s;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  margin-top: 5px;
+  transition: 0.5s;
+  border-radius: 100px;
+}
+
+.bar1:hover {
+  background-color: black;
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 270px;
+  transition: 0.3s;
+  z-index: 107;
+}
+
+.mobile-menu {
+  position: absolute;
+  transition: 0.3s;
+  top: 70px;
+  left: 0;
+  height: 100vh;
+  width: 0px;
+  line-height: 30px;
+  background: maroon;
+  z-index: 107;
+  box-shadow: 5px 0 7.5px lightgray;
+}
+
+.bold-selected {
+  font-weight: 900;
+}
+
+.heading-img {
+  width: 70vw;
+  height: auto;
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.heading {
+  font-size: 30pt;
+  text-align: center;
+}
+
+.content-container {
+  margin: 0vw 15vw;
+  margin-bottom: 0;
+}
+
+footer {
+  background-color: maroon;
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.footer-text {
+  margin: 0vw 15vw;
+  padding: none;
+  text-align: center;
+  font-size: .9em;
+  color: white;
+}
+
+.powered-by {
+  font-family: arial;
+  font-weight: normal;
+  font-size: .9em;
+}
+
+.policies {
+  color: white;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.policies:hover {
+  text-decoration: underline;
+}
+
+.about-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#about {
+  height: fit-content;
+  width: fit-content;
+  border-radius: 50%;
+}
+
+.collage {
+  width: 60%;
+  border-radius: 85px;
+}
+
+.services-container {
+  display: flex;
+  gap: 30px;
+  flex-direction: row-reverse;
+}
+
+.link {
+  color: maroon;
+  text-decoration: none;
+}
+
+.link:visited {
+  color: maroon;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* for phone */
+
+@media only screen and (max-width: 600px) {
+  .services-container {
+    flex-direction: column;
+  }
+
+  .collage {
+    width: 100%;
+  }
+
+  html {
+    scroll-padding-top: 125px;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  ul li {
+    display: none;
+  }
+
+  .open ul li {
+    display: block;
+  }
+
+  .heading-img {
+    width: 100vw;
+  }
+
+  .header-img-txt {
+    translate: 0 -14vw;
+    font-size: 6vw;
+  }
+
+  .music-school {
+    font-size: 2.75vw;
+  }
+
+  .register-on-heading {
+    font-size: 3.5vw;
+    padding: 0;
+  }
+
+  #about {
+    width: 50vw;
+  }
+}
+
+/* for tablet */
+
+@media only screen and (max-width: 900px) {
+  .register-on-heading {
+    /* font-size: 1rem; */
+  }
+
+  .content-container {
+    margin: 0vw 5vw;
+  }
+
+  .heading-img {
+    width: 90vw;
+    opacity: 50%;
+  }
+
+  .header-img-container {
+    /* align-items: center;
+    justify-content: center; */
+    translate: 0 0;
+  }
+
+  .music-school {
+    font-size: 5vw;
+  }
+
+  .header-img-txt {
+    font-size: 14vw;
+    translate: 0 -14vw;
+  }
+
+  nav {
+    font-size: .8rem;
+  }
+
+  .register-on-heading {
+    translate: 0 -11vw;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+}

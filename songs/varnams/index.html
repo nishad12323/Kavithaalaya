@@ -1,0 +1,279 @@
+<!-- This content is made by Nishad Bangole. No part of this document may be used by any others without written permission from Nishad Bangole. -->
+
+<!-- This document is a work in progress. We reserve the right to change this document at any time. -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="maroon" />
+    <title>Songs - Kavithaalaya Music</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <div id="brand">
+          <a style="color: white" href="/">Kavithaalaya Music School</a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a class="bold-selected" href="/songs/songs">Songs</a></li>
+            <li><a href="/#services">Classes</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#contact">Contact us</a></li>
+            <li>
+              <button id="register" onclick="register()">Register now</button>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-icon" onclick="toggleMobileMenu(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+
+          <ul class="mobile-menu">
+            <li><a href="/">Home</a></li>
+            <li><a class="bold-selected" href="/songs/songs">Songs</a></li>
+            <li><a href="/#services">Classes</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#contact">Contact us</a></li>
+            <li>
+              <button id="register" onclick="register()">Register now</button>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <div class="mobile-sidebar-selector">
+        <form class="search-container" onsubmit="searchM(event); return false">
+          <input name="q" class="searchbar" type="text" id="searchbarM" list="q" placeholder="Search Varnams…" onfocus="window.location.hash = 'search';">
+          <datalist id="q">
+            <option>Shankarabharanam</option>
+            <option>Mohanam</option>
+            <!-- <option>Varnam 3</option>
+            <option>Varnam 4</option>
+            <option>Varnam 5</option>
+            <option>Varnam 6</option>
+            <option>Varnam 7</option>
+            <option>Varnam 8</option>
+            <option>Varnam 9</option>
+            <option>Varnam 10</option>
+            <option>Varnam 11</option>
+            <option>Varnam 12</option>
+            <option>Varnam 13</option> -->
+          </datalist>
+        <button class="search-btn" type="submit" onclick="searchM(event);"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></button>
+        </form>
+        <p class="blue-button sidebar-selector-text" onclick="toggleMobileMenu(document.getElementById ('sidebar'));">Catalog <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#4a20d5"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7 10l5 5 5-5H7z"/></svg></p>
+        </p>
+      </div>
+
+      <dialog open class="sidebar" id="sidebar">
+        <form
+          class="search-container sidebar-search"
+          onsubmit="search(event); return false"
+        >
+          <input name="q" class="searchbar" type="text" id="searchbar" list="q" placeholder="Search Varnams…" onfocus="window.location.hash = 'search';">
+          <datalist id="q">
+            <option>Shankarabharanam</option>
+            <option>Mohanam</option>
+            <!-- <option>Varnam 3</option>
+            <option>Varnam 4</option>
+            <option>Varnam 5</option>
+            <option>Varnam 6</option>
+            <option>Varnam 7</option>
+            <option>Varnam 8</option>
+            <option>Varnam 9</option>
+            <option>Varnam 10</option>
+            <option>Varnam 11</option>
+            <option>Varnam 12</option>
+            <option>Varnam 13</option> -->
+          </datalist>
+          <button class="search-btn" type="submit" onclick="search(event);">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="26px"
+              viewBox="0 -960 960 960"
+              width="26px"
+              fill="#FFFFFF"
+            >
+              <path
+                d="M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+              />
+            </svg>
+          </button>
+        </form>
+
+        <p class="songs-header section" onclick="location.replace('/songs/geethams/')">Geethams</p>
+        <p class="songs-header section selected" onclick="location.replace('/songs/varnams/')">Varnams</p>
+        <p class="songs-header section" onclick="location.replace('/songs/songs/')">Songs</p><br>
+
+        <div class="section" onclick="goTo('shankarabharanam')">Shankarabharanam</div>
+        <div class="section" onclick="goTo('mohanam')">Mohanam</div>
+        <!-- <div class="section" onclick="goTo('varnam3')">Varnam 3</div>
+        <div class="section" onclick="goTo('varnam4')">Varnam 4</div>
+        <div class="section" onclick="goTo('varnam5')">Varnam 5</div>
+        <div class="section" onclick="goTo('varnam6')">Varnam 6</div>
+        <div class="section" onclick="goTo('varnam7')">Varnam 7</div>
+        <div class="section" onclick="goTo('varnam8')">Varnam 8</div>
+        <div class="section" onclick="goTo('varnam9')">Varnam 9</div>
+        <div class="section" onclick="goTo('varnam10')">Varnam 10</div>
+        <div class="section" onclick="goTo('varnam11')">Varnam 11</div>
+        <div class="section" onclick="goTo('varnam12')">Varnam 12</div>
+        <div class="section" onclick="goTo('varnam13')">Varnam 13</div>
+        <div class="section" onclick="goTo('varnam14')">Varnam 14</div>
+        <div class="section" onclick="goTo('varnam15')">Varnam 15</div>
+        <div class="section" onclick="goTo('varnam16')">Varnam 16</div>
+        <div class="section" onclick="goTo('varnam17')">Varnam 17</div>
+        <div class="section" onclick="goTo('varnam18')">Varnam 18</div>
+        <div class="section" onclick="goTo('varnam19')">Varnam 19</div>
+        <div class="section" onclick="goTo('varnam20')">Varnam 20</div>
+        <div class="section" onclick="goTo('varnam21')">Varnam 21</div>
+        <div class="section" onclick="goTo('varnam22')">Varnam 22</div>
+        <div class="section" onclick="goTo('varnam23')">Varnam 23</div>
+        <div class="section" onclick="goTo('varnam24')">Varnam 24</div>
+        <div class="type-of-varnam">PANCHA NADAI VARNAMS</div> -->
+        
+      </dialog>
+      <span id="up"></span>
+      <div class="content-container">
+        <div id="shankarabharanam">
+          <h1 class="heading">Shankarabharanam</h1>
+          <center><h1>29th Melakarta</h1></center><br>
+          <span class="song-section">
+              <p>Talam : Adi <br>
+                Aro: SRGMPDNṠ <br>
+                Avo: ṠNDPMRGRS<br>
+                Composer: Veenai Kuppaiyer<br><br>
+                Pallavi: Sāmi ninnē kōri chālā marulu konnadirā ||<br>
+                Anupallavi: Tāmasamu sēyaka dayajūdarā kumārā ||<br>
+                Charanam: Neerajākshi neepai ||<br>
+              </p>
+
+          <br>
+          <section>
+            <h2>Song Recording</h2><br>
+
+            <p>Pallavi, Anupallavi, Muktayi swaram:</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/shankarabharanam1.m4a" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <br><br><p>Sahityam: pallavi, anupallavi</p><br>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/shankarabharanam2.m4a" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </section>
+          
+          <br><br>
+        </div>
+
+        <div id="mohanam">
+          <h1 class="heading">Mohanam</h1>
+          <center><h1>28th Melakarta</h1></center><br>
+          <span class="song-section">
+              <p>Talam : Adi <br>
+                Aro: SRGPDṠ <br>
+                Avo: ṠDPGRS<br>
+                Composer: Ramnad Shrinivasa Iyengar<br><br>
+                <br>
+              </p>
+
+          <br>
+          <section>
+            <h2>Song Recording</h2><br>
+
+            <p>pallavi</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/mohanam1.m4a" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>anupallavi, muktayi swaram, sahityam</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/mohanam2.m4a" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>charanam, chittai swaras 1, 2</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/mohanam3.m4a" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>chittai swaras 3, 4</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/mohanam4.m4a" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </section>
+
+          <br><br>
+        </div>
+        <!-- <div id="songN">
+        <h1 class="heading">SongN</h1><br>
+
+        <br>
+        <section>
+          <h2>Song Recording</h2><br>
+          <audio controls class="audio" style="width: 100%;">
+            <source src="recordings/audio-file.m4a" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </section>
+        <br>
+        <span class="song-section">
+          <h1>pallavi</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics
+      </p>
+        </span><br>
+        <span class="song-section">
+          <h1>anupallavi</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+        </span><br>
+        <span class="song-section">
+          <h1>charanam 1</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+        </span><br>
+        <span class="song-section">
+          <h1>charanam 2</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+        </span><br>
+        <span class="song-section">
+          <h1>charanam 3</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+
+        </span><br>
+        <br><br>
+      </div> -->
+      </div>
+    </div>
+  </body>
+</html>

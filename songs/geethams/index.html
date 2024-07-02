@@ -1,0 +1,557 @@
+<!-- This content is made by Nishad Bangole. No part of this document may be used by any others without written permission from Nishad Bangole. -->
+
+<!-- This document is a work in progress. We reserve the right to change this document at any time. -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="maroon" />
+    <title>Songs - Kavithaalaya Music</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <div id="brand">
+          <a style="color: white" href="/">Kavithaalaya Music School</a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a class="bold-selected" href="/songs/songs">Songs</a></li>
+            <li><a href="/#services">Classes</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#contact">Contact us</a></li>
+            <li>
+              <button id="register" onclick="register()">Register now</button>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-icon" onclick="toggleMobileMenu(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+
+          <ul class="mobile-menu">
+            <li><a href="/">Home</a></li>
+            <li><a class="bold-selected" href="/songs/songs">Songs</a></li>
+            <li><a href="/#services">Classes</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#contact">Contact us</a></li>
+            <li>
+              <button id="register" onclick="register()">Register now</button>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <span id="up"></span>
+      <div class="mobile-sidebar-selector">
+        <form class="search-container" onsubmit="searchM(event); return false">
+          <input
+            name="q"
+            class="searchbar"
+            type="text"
+            id="searchbarM"
+            list="q"
+            placeholder="Search Geethams…"
+          />
+          <datalist id="q">
+            <!-- <option>Geetham 1</option>
+          <option>Geetham 2</option>
+          <option>Geetham 3</option>
+          <option>Geetham 4</option>
+          <option>Geetham 5</option>
+          <option>Geetham 6</option>
+          <option>Geetham 7</option>
+          <option>Geetham 8</option>
+          <option>Geetham 9</option>
+          <option>Geetham 10</option> -->
+            <option>Geetham 11</option>
+            <option>Geetham 12</option>
+            <option>Geetham 13</option>
+            <option>Swarajathi 1</option>
+            <option>Swarajathi 2</option>
+          </datalist>
+          <button class="search-btn" type="submit" onclick="searchM(event);">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="26px"
+              viewBox="0 -960 960 960"
+              width="26px"
+              fill="#FFFFFF"
+            >
+              <path
+                d="M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+              />
+            </svg>
+          </button>
+        </form>
+        <p
+          class="blue-button sidebar-selector-text"
+          onclick="toggleMobileMenu(document.getElementById ('sidebar'));"
+        >
+          Catalog
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+            fill="#4a20d5"
+          >
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path d="M7 10l5 5 5-5H7z" />
+          </svg>
+        </p>
+      </div>
+
+      <dialog open class="sidebar" id="sidebar">
+        <form
+          class="search-container sidebar-search"
+          onsubmit="search(event); return false"
+        >
+          <input
+            name="q"
+            class="searchbar"
+            type="text"
+            id="searchbar"
+            list="q"
+            placeholder="Search Varnams…"
+            onfocus="window.location.hash = 'search';"
+          />
+          <datalist id="q">
+            <!-- <option>Geetham1</option>
+          <option>Geetham2</option>
+          <option>Geetham3</option>
+          <option>Geetham4</option>
+          <option>Geetham5</option>
+          <option>Geetham6</option>
+          <option>Geetham7</option>
+          <option>Geetham8</option>
+          <option>Geetham9</option>
+          <option>Geetham10</option> -->
+            <option>Geetham11</option>
+            <option>Geetham12</option>
+            <option>Geetham13</option>
+            <option>Swarajathi 1</option>
+            <option>Swarajathi 2</option>
+          </datalist>
+          <button class="search-btn" type="submit" onclick="search(event);">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="26px"
+              viewBox="0 -960 960 960"
+              width="26px"
+              fill="#FFFFFF"
+            >
+              <path
+                d="M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+              />
+            </svg>
+          </button>
+        </form>
+
+        <p
+          class="songs-header section selected"
+          onclick="location.replace('/songs/geethams/')"
+        >
+          Geethams
+        </p>
+        <p
+          class="songs-header section"
+          onclick="location.replace('/songs/varnams/')"
+        >
+          Varnams
+        </p>
+        <p
+          class="songs-header section"
+          onclick="location.replace('/songs/songs/')"
+        >
+          Songs
+        </p>
+        <br />
+        <!-- <div class="section"
+        onclick="goTo('geetham1')">
+        Geetham 1
+      </div>
+      <div class="section"
+        onclick="goTo('geetham2')">
+        Geetham 2
+      </div>
+      <div class="section"
+        onclick="goTo('geetham3')">
+        Geetham 3
+      </div>
+      <div class="section"
+        onclick="goTo('geetham4')">
+        Geetham 4
+      </div>
+      <div class="section"
+        onclick="goTo('geetham5')">
+        Geetham 5
+      </div>
+      <div class="section"
+        onclick="goTo('geetham6')">
+        Geetham 6
+      </div>
+      <div class="section"
+        onclick="goTo('geetham7')">
+        Geetham 7
+      </div>
+      <div class="section"
+        onclick="goTo('geetham8')">
+        Geetham 8
+      </div>
+      <div class="section"
+        onclick="goTo('geetham9')">
+        Geetham 9
+      </div>
+      <div class="section"
+        onclick="goTo('geetham10')">
+        Geetham 10
+      </div> -->
+        <p class="song-section-split" style="margin-top: 0px">Geethams</p>
+        <div class="section" onclick="goTo('geetham11')">Geetham 11</div>
+        <div class="section" onclick="goTo('geetham12')">Geetham 12</div>
+
+        <p class="song-section-split">Swarajathies</p>
+        <!--<div class="section"
+        onclick="goTo('geetham13')">
+        Geetham 13
+      </div> -->
+
+        <div class="section" onclick="goTo('swarajathi1')">Swarajathi 1</div>
+        <div class="section" onclick="goTo('swarajathi2')">Swarajathi 2</div>
+      </dialog>
+      <span id="up"></span>
+      <div class="content-container">
+        <div id="geetham11">
+          <h1 class="heading">Geetham 11</h1>
+          <br />
+
+          <p>
+            Ragam: Ananda Bhairavi<br />
+            Talam: Adi<br />
+            Aro: SG1R2G1M1PD2PṠ<br />
+            Ava: ṠN1D2PM1G1R2S<br />
+          </p>
+          <br />
+          <section>
+            <h2>Song Recording</h2>
+            <br />
+            <p>Swaram:</p>
+            <audio controls class="audio" style="width: 100%">
+              <source src="recordings/geetham11swaram.m4a" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            <p>Sahityam:</p>
+            <audio controls class="audio" style="width: 100%">
+              <source
+                src="recordings/geetham11sahityam.m4a"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
+          </section>
+
+          <br />
+          <span class="song-section">
+            <p>
+              Kamalasulochana Vimala thatagini marāla gamini karihara madhyë<br />
+              bimbhānana vidumandalarë. Chandana kumkuma samkalitha-parimala<br />
+              kastūri thilakatharë rë jāji śayyā kacha kucha gana
+              jaganamabõja<br />
+              marāla gămini (vidu).
+            </p> </span
+          ><br />
+
+          <br /><br />
+        </div>
+        <div id="geetham12">
+          <h1 class="heading">Geetham 12</h1>
+          <br />
+
+          <p>
+            Ragam: Shree<br />
+            Talam: Chathurasra Jathi Dhruva talam<br />
+            Aro: SR2M1PN1Ṡ<br />
+            Ava: ṠN1PM1R2G1R2S<br />
+          </p>
+          <br />
+          <section>
+            <h2>Song Recording</h2>
+            <br />
+            <p>Swaram:</p>
+            <audio controls class="audio" style="width: 100%">
+              <source src="recordings/geetham12swaram.m4a" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            <p>Sahityam:</p>
+            <audio controls class="audio" style="width: 100%">
+              <source
+                src="recordings/geetham12sahityam.m4a"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
+          </section>
+
+          <br />
+          <!-- <span class="song-section">
+
+            <p>
+              Kamalasulochana Vimala thatagini marāla gamini karihara madhyë<br>
+              bimbhānana vidumandalarë. Chandana kumkuma samkalitha-parimala<br>
+              kastūri thilakatharë rë jāji śayyā kacha kucha gana jaganamabõja<br>
+              marāla gămini (vidu).
+            </p> </span><br /> -->
+
+          <br /><br />
+        </div>
+
+        <div id="swarajathi1">
+          <h1 class="heading">Swarajathi 1</h1>
+          <br />
+
+          <p>
+            Ragam: Bilahari<br />
+            Talam: Adi<br />
+            Aro: SR2G2PD2Ṡ<br />
+            Ava: ṠN2D2PM1G2R2S<br />
+          </p>
+          <br />
+          <section>
+            <h2>Song Recording</h2>
+            <br />
+            <p>Swaram:</p>
+            <audio controls class="audio" style="width: 100%">
+              <source
+                src="recordings/swarajathi1swaram.m4a"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
+            <p>Sahityam:</p>
+            <audio controls class="audio" style="width: 100%">
+              <source
+                src="recordings/swarajathi1sahityam.m4a"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
+          </section>
+
+          <br />
+          <span class="song-section">
+            <h1>Pallavi</h1>
+            <p>Raaraa Venugopa Baala Raajita Sadguna Jaya Sheela</p> </span
+          ><br />
+          <span class="song-section">
+            <h1>Anupallavi</h1>
+            <p>Saarasaaksha Nera Memi Maarubaari Korvaleraa</p> </span
+          ><br />
+          <span class="song-section">
+            <h1>Charanam 1</h1>
+            <p>
+              Nandagopaalaa Ne Nendu Pojaalaa Nee<br />
+              Vindu Raaraa Sadamalamadito Mudamala Raganaa Keduruga Gadiyara
+              (Raaravenu)
+            </p> </span
+          ><br />
+          <span class="song-section">
+            <h1>Charanam 2</h1>
+            <p>
+              Palumaa Runugaa Ravamuna Nin Pilachina Palukavu Nalugakuraa<br />
+              Karivarada Marimarina Adharamugro Larakani Karamuga (Raaravenu)
+            </p> </span
+          ><br />
+          <span class="song-section">
+            <h1>Charanam 3</h1>
+            <p>
+              Raa Nagadara Raa Murahara Raa Bhavahara Raaveraa<br />
+              Ee Maguvanu Ee Lalalanu Ee Sogasini Chekoraa<br />
+              Korikalim Pondaa Dendamu Neeyanda Cherenu Neechenta Maruvakuraa
+              Karamulache Marimari Ninu Sharanane dara (Raaravenu)
+            </p> </span
+          ><br />
+          <br /><br />
+        </div>
+
+        <div id="swarajathi2">
+          <h1 class="heading">Swarajathi 2</h1>
+          <br />
+
+          <p>
+            Ragam: Kamas<br />
+            Talam: Adi<br />
+            Aro: SM1G2M1PD2N1Ṡ<br />
+            Ava: ṠN1D2PM1G2R2S<br />
+          </p>
+          <br />
+          <section>
+            <h2>Song Recording</h2>
+            <br />
+            <p>Swaram:</p>
+            <p>pallavi, charanam1</p>
+            <audio controls class="audio" style="width: 100%">
+              <source
+                src="recordings/swarajathi2swaram1.m4a"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
+            <p>charanam2, 3, 4, 5</p>
+            <audio controls class="audio" style="width: 100%">
+              <source
+                src="recordings/swarajathi2swaram2.m4a"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
+
+            <p>Sahityam:</p>
+            <p>pallavi, charanam1, 2</p>
+            <audio controls class="audio" style="width: 100%">
+              <source
+                src="recordings/swarajathi2sahityam1.m4a"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
+            <p>charanam3, 4, 5</p>
+            <audio controls class="audio" style="width: 100%">
+              <source
+                src="recordings/swarajathi2sahityam2.m4a"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
+          </section>
+
+          <br />
+          <span class="song-section">
+            <h1>Pallavi</h1>
+            <p>
+              sAmba shivAyanavE rAjitagiri<br />
+
+              sAmbavI manOharA parAtparA krpAkarA shrI
+            </p> </span
+          ><br />
+          <span class="song-section">
+            <h1>Charanam 1</h1>
+            <p>
+              nIvE guru daivambaniyE vELanu sEvimpucu sadA midini shiva
+            </p> </span
+          ><br />
+          <span class="song-section">
+            <h1>Charanam 2</h1>
+            <p>
+              parama dayAnidhi vanucu maruvaka nA hrdayamuna<br />
+
+              mahAdEva mahAprabhO sundara nayana suravara dAyaka bhavabhaya
+              harashiva
+            </p> </span
+          ><br />
+          <span class="song-section">
+            <h1>Charanam 3</h1>
+            <p>
+              sthira madurApuramuna varamulosagu haruni niratamunu dalaci
+            </p> </span
+          ><br />
+          <span class="song-section">
+            <h1>Charanam 4</h1>
+            <p>
+              shrI shubhakara shashi makuTadhara jaya vijaya tripurahara<br />
+              shrtajana lOladbhuta guNa shIlA krtanutapAlA patituni lOlA-<br />
+              mudambala ranga padAbjamulanu padambujErcu pashupatini<br />
+              gnyaanamudhyaanamu snaanamupaanamu<br />
+              daanamumaanamu abhimaanamanucu<br />
+              kanikaramunacaraNambulukanu<br />
+              konushrutulannutula sharaNanucu (saamba)
+            </p> </span
+          ><br />
+          <span class="song-section">
+            <h1>Charanam 5</h1>
+            <p>
+              sAresAregu nI nAma mantram kOrinAnu nI pAdAmbuja mantram<br />
+
+              dAsuDau cinni krSNuniki dikku nIvEyani shokkanAthuni nammukoni
+            </p> </span
+          ><br />
+          <br /><br />
+        </div>
+
+        <!-- <div id="songN">
+        <h1 class="heading">SongN</h1><br>
+
+        <br>
+        <section>
+          <h2>Song Recording</h2><br>
+          <audio controls class="audio" style="width: 100%;">
+            <source src="recordings/audio-file.m4a" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </section>
+        <br>
+        <span class="song-section">
+          <h1>pallavi</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics
+      </p>
+        </span><br>
+        <span class="song-section">
+          <h1>anupallavi</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+        </span><br>
+        <span class="song-section">
+          <h1>charanam 1</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+        </span><br>
+        <span class="song-section">
+          <h1>charanam 2</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+        </span><br>
+        <span class="song-section">
+          <h1>charanam 3</h1>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+          <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
+            lyrics lyrics
+            lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
+
+        </span><br>
+        <br><br>
+      </div> -->
+      </div>
+    </div>
+  </body>
+</html>
