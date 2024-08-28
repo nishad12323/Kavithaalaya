@@ -5,6 +5,18 @@ function toggleMobileMenu(menu) {
   }
 }
 
+document.getElementById("content-container").addEventListener("click", () => {
+  if (document.getElementById("menu-icon").classList.contains("open")) {
+    toggleMobileMenu(document.getElementById("menu-icon"));
+  }
+});
+
+document.getElementById("header-img-container").addEventListener("click", () => {
+  if (document.getElementById("menu-icon").classList.contains("open")) {
+    toggleMobileMenu(document.getElementById("menu-icon"));
+  }
+});
+
 var r = "";
 
 function register() {
@@ -14,7 +26,9 @@ function register() {
     `width=${window.screen.width * 0.7},height=${window.screen.height * 0.7}`,
   );
 
-  r.document.querySelectorAll(".l4V7wb").addEventListener("click", closeRegisterWindow)
+  r.document
+    .querySelectorAll(".l4V7wb")
+    .addEventListener("click", closeRegisterWindow);
 
   // r.document.write(`
   // <html>

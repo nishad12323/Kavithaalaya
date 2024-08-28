@@ -3,9 +3,42 @@ var searchbar = document.getElementById("searchbar");
 var searchbarM = document.getElementById("searchbarM");
 
 var contentContainer = document.querySelector(".content-container");
-var contentContainerHtml = contentContainer.innerHTML
+var contentContainerHtml = contentContainer.innerHTML;
 
 var currentStateLength = history.length;
+
+contentContainer.addEventListener("click", () => {
+  if (document.getElementById("menu-icon").classList.contains("open")) {
+    toggleMobileMenu(document.getElementById("menu-icon"));
+  }
+});
+
+function onlyPlayOneIn(container) {
+  container.addEventListener(
+    "play",
+    function (event) {
+      audio_elements = container.getElementsByTagName("audio");
+      for (i = 0; i < audio_elements.length; i++) {
+        audio_element = audio_elements[i];
+        if (audio_element !== event.target) {
+          audio_element.pause();
+        }
+      }
+    },
+    true,
+  );
+}
+
+onlyPlayOneIn(contentContainer);
+
+Array.from(document.querySelectorAll("audio")).forEach((elementAudio) => {
+  elementAudio.load();
+  elementAudio.setAttribute("oncontextmenu", "return false;");
+  elementAudio.setAttribute(
+    "controlsList",
+    "nodownload nofullscreen noremoteplayback",
+  );
+});
 
 if (location.hash.includes("q=")) {
   searchbar.value = location.hash.slice(3);
@@ -33,7 +66,7 @@ function goTo(item) {
   contentContainer.innerHTML = contentContainerHtml;
   document.getElementById(item).scrollIntoView();
   window.location.hash = item;
-  toggleMobileMenu(document.getElementById("sidebar"))
+  toggleMobileMenu(document.getElementById("sidebar"));
 }
 
 var r = "";
@@ -113,32 +146,41 @@ function toggleMobileMenu(menu) {
     menu == document.getElementById("sidebar") &&
     document.getElementById("sidebar").classList.contains("open")
   ) {
-    document.querySelector(".sidebar-selector-text").innerHTML = `Catalog <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="28px" fill="#4a20d5"><path d="m280-400 200-200.67L680-400H280Z"/></svg>`;
+    document.querySelector(".sidebar-selector-text").innerHTML =
+      `Catalog <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="28px" fill="#4a20d5"><path d="m280-400 200-200.67L680-400H280Z"/></svg>`;
   } else {
-    document.querySelector(".sidebar-selector-text").innerHTML = `Catalog <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="28px" fill="#4a20d5"><path d="M480-360 280-559.33h400L480-360Z"/></svg>`;
+    document.querySelector(".sidebar-selector-text").innerHTML =
+      `Catalog <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="28px" fill="#4a20d5"><path d="M480-360 280-559.33h400L480-360Z"/></svg>`;
   }
+}
+
+function printPDF(fileName) {
+  window.open(fileName).print();
+}
+
+function goBack() {
+  contentContainer.innerHTML = contentContainerHtml;
+  searchbar.value = ``;
+  searchbarM.value = ``;
 }
 
 // Searchbar functionality
 
 const keywords = [
   "geetham 11 geetham 11th geetham ragam ananda bhairavi ragam talam adi talam    ",
-  "geetham12",
-  "swarajathi1",
-  "swarajathi2"
+  "geetham 12",
+  "swarajathi 1",
+  "swarajathi 2",
 ];
 
-const stuff = [
-  "geetham11",
-  "geetham12",
-  "swarajathi1",
-  "swarajathi2"
-];
+const stuff = ["geetham11", "geetham12", "swarajathi1", "swarajathi2"];
 
 var newStuff = Array.from(contentContainer.querySelectorAll("*[id]"));
 var contentContainerHtml = contentContainer.innerHTML;
 
 function search(event, fromForm) {
+  searchbarM.value = searchbar.value;
+
   if (fromForm == true) {
     event.preventDefault();
   }
@@ -185,7 +227,8 @@ function search(event, fromForm) {
   }
 
   contentContainer.innerHTML =
-    "<center id='search-results-banner'>Search Results</center>" + text;
+    `<center title="Go back" id='search-results-banner' onclick='goBack()'><svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px" height="24px" viewBox="0 -960 960 960" width="24px" fill="#4a20d5"><path d="m313-440 196 196q12 12 11.5 28T508-188q-12 11-28 11.5T452-188L188-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l264-264q11-11 27.5-11t28.5 11q12 12 12 28.5T508-715L313-520h447q17 0 28.5 11.5T800-480q0 17-11.5 28.5T760-440H313Z"/></svg>Search Results</center>` +
+    text;
   console.log(text);
   const searchResultsBanner = document.getElementById(
     "search-results-banner",
@@ -200,6 +243,8 @@ function search(event, fromForm) {
 // mobile search
 
 function searchM(event, fromForm) {
+  searchbar.value = searchbarM.value;
+
   if (fromForm == true) {
     event.preventDefault();
   }
@@ -207,11 +252,11 @@ function searchM(event, fromForm) {
   document.getElementById("up").scrollIntoView();
 
   if (document.getElementById("sidebar").classList.contains("open")) {
-    toggleMobileMenu(document.getElementById("sidebar"))
+    toggleMobileMenu(document.getElementById("sidebar"));
   }
 
   searchbarValue = document.getElementById("searchbarM").value;
-  searchbar.blur();
+  searchbarM.blur();
   window.location.hash = "#search";
 
   if (searchbarValue == "") {
@@ -250,7 +295,8 @@ function searchM(event, fromForm) {
   }
 
   contentContainer.innerHTML =
-    "<center id='search-results-banner'>Search Results</center>" + text;
+    `<center title="Go back" id='search-results-banner' onclick='goBack()'><svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px" height="24px" viewBox="0 -960 960 960" width="24px" fill="#4a20d5"><path d="m313-440 196 196q12 12 11.5 28T508-188q-12 11-28 11.5T452-188L188-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l264-264q11-11 27.5-11t28.5 11q12 12 12 28.5T508-715L313-520h447q17 0 28.5 11.5T800-480q0 17-11.5 28.5T760-440H313Z"/></svg>Search Results</center>` +
+    text;
   console.log(text);
   const searchResultsBanner = document.getElementById(
     "search-results-banner",

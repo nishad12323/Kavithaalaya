@@ -68,7 +68,11 @@
       </header>
       <span id="up"></span>
       <div class="mobile-sidebar-selector">
-        <form class="search-container" onsubmit="searchM(event); return false">
+        <form
+          class="search-container"
+          onsubmit="searchM(event); return false"
+          autocomplete="off"
+        >
           <input
             name="q"
             class="searchbar"
@@ -76,6 +80,8 @@
             id="searchbarM"
             list="q"
             placeholder="Search Geethams…"
+            onfocus="window.location.hash = 'search'; document.getElementById('sidebar-selector-text').style.display = 'none'"
+            onblur="document.getElementById('sidebar-selector-text').style.display = 'flex'"
           />
           <datalist id="q">
             <!-- <option>Geetham 1</option>
@@ -111,6 +117,7 @@
         <p
           class="blue-button sidebar-selector-text"
           onclick="toggleMobileMenu(document.getElementById ('sidebar'));"
+          id="sidebar-selector-text"
         >
           Catalog
           <svg
@@ -130,6 +137,7 @@
         <form
           class="search-container sidebar-search"
           onsubmit="search(event); return false"
+          autocomplete="off"
         >
           <input
             name="q"
@@ -137,7 +145,7 @@
             type="text"
             id="searchbar"
             list="q"
-            placeholder="Search Varnams…"
+            placeholder="Search Geethams…"
             onfocus="window.location.hash = 'search';"
           />
           <datalist id="q">
@@ -175,18 +183,21 @@
         <p
           class="songs-header section selected"
           onclick="location.replace('/songs/geethams/')"
+          tabindex="0"
         >
           Geethams
         </p>
         <p
           class="songs-header section"
           onclick="location.replace('/songs/varnams/')"
+          tabindex="0"
         >
           Varnams
         </p>
         <p
           class="songs-header section"
           onclick="location.replace('/songs/songs/')"
+          tabindex="0"
         >
           Songs
         </p>
@@ -232,8 +243,12 @@
         Geetham 10
       </div> -->
         <p class="song-section-split" style="margin-top: 0px">Geethams</p>
-        <div class="section" onclick="goTo('geetham11')">Geetham 11</div>
-        <div class="section" onclick="goTo('geetham12')">Geetham 12</div>
+        <div class="section" onclick="goTo('geetham11')" tabindex="0">
+          Geetham 11
+        </div>
+        <div class="section" onclick="goTo('geetham12')" tabindex="0">
+          Geetham 12
+        </div>
 
         <p class="song-section-split">Swarajathies</p>
         <!--<div class="section"
@@ -241,8 +256,12 @@
         Geetham 13
       </div> -->
 
-        <div class="section" onclick="goTo('swarajathi1')">Swarajathi 1</div>
-        <div class="section" onclick="goTo('swarajathi2')">Swarajathi 2</div>
+        <div class="section" onclick="goTo('swarajathi1')" tabindex="0">
+          Swarajathi 1
+        </div>
+        <div class="section" onclick="goTo('swarajathi2')" tabindex="0">
+          Swarajathi 2
+        </div>
       </dialog>
       <span id="up"></span>
       <div class="content-container">
@@ -262,13 +281,13 @@
             <br />
             <p>Swaram:</p>
             <audio controls class="audio" style="width: 100%">
-              <source src="recordings/geetham11swaram.m4a" type="audio/mpeg" />
+              <source src="recordings/geetham11swaram.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
             <p>Sahityam:</p>
             <audio controls class="audio" style="width: 100%">
               <source
-                src="recordings/geetham11sahityam.m4a"
+                src="recordings/geetham11sahityam.mp3"
                 type="audio/mpeg"
               />
               Your browser does not support the audio element.
@@ -304,13 +323,13 @@
             <br />
             <p>Swaram:</p>
             <audio controls class="audio" style="width: 100%">
-              <source src="recordings/geetham12swaram.m4a" type="audio/mpeg" />
+              <source src="recordings/geetham12swaram.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
             <p>Sahityam:</p>
             <audio controls class="audio" style="width: 100%">
               <source
-                src="recordings/geetham12sahityam.m4a"
+                src="recordings/geetham12sahityam.mp3"
                 type="audio/mpeg"
               />
               Your browser does not support the audio element.
@@ -347,7 +366,7 @@
             <p>Swaram:</p>
             <audio controls class="audio" style="width: 100%">
               <source
-                src="recordings/swarajathi1swaram.m4a"
+                src="recordings/swarajathi1swaram.mp3"
                 type="audio/mpeg"
               />
               Your browser does not support the audio element.
@@ -355,7 +374,7 @@
             <p>Sahityam:</p>
             <audio controls class="audio" style="width: 100%">
               <source
-                src="recordings/swarajathi1sahityam.m4a"
+                src="recordings/swarajathi1sahityam.mp3"
                 type="audio/mpeg"
               />
               Your browser does not support the audio element.
@@ -416,7 +435,7 @@
             <p>pallavi, charanam1</p>
             <audio controls class="audio" style="width: 100%">
               <source
-                src="recordings/swarajathi2swaram1.m4a"
+                src="recordings/swarajathi2swaram1.mp3"
                 type="audio/mpeg"
               />
               Your browser does not support the audio element.
@@ -424,7 +443,7 @@
             <p>charanam2, 3, 4, 5</p>
             <audio controls class="audio" style="width: 100%">
               <source
-                src="recordings/swarajathi2swaram2.m4a"
+                src="recordings/swarajathi2swaram2.mp3"
                 type="audio/mpeg"
               />
               Your browser does not support the audio element.
@@ -434,7 +453,7 @@
             <p>pallavi, charanam1, 2</p>
             <audio controls class="audio" style="width: 100%">
               <source
-                src="recordings/swarajathi2sahityam1.m4a"
+                src="recordings/swarajathi2sahityam1.mp3"
                 type="audio/mpeg"
               />
               Your browser does not support the audio element.
@@ -442,7 +461,7 @@
             <p>charanam3, 4, 5</p>
             <audio controls class="audio" style="width: 100%">
               <source
-                src="recordings/swarajathi2sahityam2.m4a"
+                src="recordings/swarajathi2sahityam2.mp3"
                 type="audio/mpeg"
               />
               Your browser does not support the audio element.
@@ -509,7 +528,7 @@
         <section>
           <h2>Song Recording</h2><br>
           <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/audio-file.m4a" type="audio/mpeg">
+            <source src="recordings/audio-file.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>

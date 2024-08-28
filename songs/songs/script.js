@@ -7,6 +7,25 @@ var contentContainerHtml = contentContainer.innerHTML;
 
 var currentStateLength = history.length;
 
+function onlyPlayOneIn(container) {
+  container.addEventListener(
+    "play",
+    function (event) {
+      audio_elements = container.getElementsByTagName("audio");
+      for (i = 0; i < audio_elements.length; i++) {
+        audio_element = audio_elements[i];
+        if (audio_element !== event.target) {
+          audio_element.pause();
+        }
+      }
+    },
+    true,
+  );
+}
+
+onlyPlayOneIn(contentContainer);
+
+
 contentContainer.addEventListener("click", () => {
   if (document.getElementById("menu-icon").classList.contains("open")) {
     toggleMobileMenu(document.getElementById("menu-icon"));
@@ -20,6 +39,10 @@ if (location.hash.includes("q=")) {
 if (window.location.hash == "") {
   toggleMobileMenu(document.getElementById("sidebar"));
 }
+
+Array.from(document.querySelectorAll('audio')).forEach((element) => {
+  element.setAttribute('oncontextmenu', "return false;")
+})
 
 window.addEventListener("popstate", function (event) {
   // This function will be called when the user navigates back in history
@@ -128,7 +151,13 @@ function toggleMobileMenu(menu) {
 }
 
 function printPDF(fileName) {
-  window.open(fileName).print();
+  const isMobile = navigator.userAgentData.mobile;
+  
+  if (isMobile) {
+    window.open(fileName);
+  } else {
+    window.open(fileName).print();
+  }
 }
 
 function goBack() {
@@ -156,10 +185,10 @@ const keywords = [
   "radhe radhe bhajan talam eka talam",
   "rama rama ragam nilambari ragam neelambari ragam talam adi talam",
   "ramanukku mannan mudi",
-  "saraswathi namosthuthe saraswathi namostute ragam saraswathi ragam talam adi talam",
-  "unai marandhariyen",
-  "vel vel",
-  "vittal bhajan",
+  "saraswathi namosthuthe saraswathi namostute ragam saraswathi ragam talam roopaka talam",
+  "unai marandhariyen ragam kalyana vasantham ragam talam adi talam devi b.a. chidambaram ba chidambaram",
+  "vel vel vel vel talam eka talam ekam talam",
+  "vittal bhajan vittala vittala hari vittala talam eka talam ekam talam",
 ];
 
 const stuff = [
@@ -189,7 +218,7 @@ var newStuff = Array.from(contentContainer.querySelectorAll("*[id]"));
 var contentContainerHtml = contentContainer.innerHTML;
 
 function search(event, fromForm) {
-  searchbarM.value = searchbar.value
+  searchbarM.value = searchbar.value;
 
   if (fromForm == true) {
     event.preventDefault();
@@ -237,7 +266,8 @@ function search(event, fromForm) {
   }
 
   contentContainer.innerHTML =
-    `<center title="Go back" id='search-results-banner' onclick='goBack()'><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#4a20d5"><path d="m142-480 294 294q15 15 14.5 35T435-116q-15 15-35 15t-35-15L57-423q-12-12-18-27t-6-30q0-15 6-30t18-27l308-308q15-15 35.5-14.5T436-844q15 15 15 35t-15 35L142-480Z"/></svg>Search Results</center>` + text;
+    `<center title="Go back" id='search-results-banner' onclick='goBack()'><svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px" height="24px" viewBox="0 -960 960 960" width="24px" fill="#4a20d5"><path d="m313-440 196 196q12 12 11.5 28T508-188q-12 11-28 11.5T452-188L188-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l264-264q11-11 27.5-11t28.5 11q12 12 12 28.5T508-715L313-520h447q17 0 28.5 11.5T800-480q0 17-11.5 28.5T760-440H313Z"/></svg>Search Results</center>` +
+    text;
   console.log(text);
   const searchResultsBanner = document.getElementById(
     "search-results-banner",
@@ -252,7 +282,7 @@ function search(event, fromForm) {
 // mobile search
 
 function searchM(event, fromForm) {
-  searchbar.value = searchbarM.value
+  searchbar.value = searchbarM.value;
 
   if (fromForm == true) {
     event.preventDefault();
@@ -304,7 +334,8 @@ function searchM(event, fromForm) {
   }
 
   contentContainer.innerHTML =
-    `<center title="Go back" id='search-results-banner' onclick='goBack()'><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#4a20d5"><path d="m142-480 294 294q15 15 14.5 35T435-116q-15 15-35 15t-35-15L57-423q-12-12-18-27t-6-30q0-15 6-30t18-27l308-308q15-15 35.5-14.5T436-844q15 15 15 35t-15 35L142-480Z"/></svg>Search Results</center>` + text;
+    `<center title="Go back" id='search-results-banner' onclick='goBack()'><svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px" height="24px" viewBox="0 -960 960 960" width="24px" fill="#4a20d5"><path d="m313-440 196 196q12 12 11.5 28T508-188q-12 11-28 11.5T452-188L188-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l264-264q11-11 27.5-11t28.5 11q12 12 12 28.5T508-715L313-520h447q17 0 28.5 11.5T800-480q0 17-11.5 28.5T760-440H313Z"/></svg>Search Results</center>` +
+    text;
   console.log(text);
   const searchResultsBanner = document.getElementById(
     "search-results-banner",

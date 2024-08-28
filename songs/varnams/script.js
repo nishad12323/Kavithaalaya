@@ -1,11 +1,38 @@
 var searchbar = document.getElementById("searchbar");
 
 var searchbarM = document.getElementById("searchbarM");
-
 var contentContainer = document.querySelector(".content-container");
 var contentContainerHtml = contentContainer.innerHTML;
 
 var currentStateLength = history.length;
+
+contentContainer.addEventListener("click", () => {
+  if (document.getElementById("menu-icon").classList.contains("open")) {
+    toggleMobileMenu(document.getElementById("menu-icon"));
+  }
+});
+
+function onlyPlayOneIn(container) {
+  container.addEventListener(
+    "play",
+    function (event) {
+      audio_elements = container.getElementsByTagName("audio");
+      for (i = 0; i < audio_elements.length; i++) {
+        audio_element = audio_elements[i];
+        if (audio_element !== event.target) {
+          audio_element.pause();
+        }
+      }
+    },
+    true,
+  );
+}
+
+onlyPlayOneIn(contentContainer);
+
+Array.from(document.querySelectorAll("audio")).forEach((element) => {
+  element.setAttribute("oncontextmenu", "return false;");
+});
 
 if (location.hash.includes("q=")) {
   searchbar.value = location.hash.slice(3);
@@ -121,19 +148,45 @@ function toggleMobileMenu(menu) {
   }
 }
 
+function printPDF(fileName) {
+  window.open(fileName).print();
+}
+
+function goBack() {
+  contentContainer.innerHTML = contentContainerHtml;
+  searchbar.value = ``;
+  searchbarM.value = ``;
+}
+
 // Searchbar functionality
 
 const keywords = [
   "shankarabharanam varnam 1 varnam 1 talam adi talam sami ninne kori sāmi ninnē kōri ragam shankarabharanam ragam",
   "mohanam varnam 2 varnam 2 talam adi talam ninnu kōri ninnu kori ragam mohanam ragam",
+  "abhogi varnam 3 varnam 3 talam adi talam evvari bodana evvari bodhana evari bodana evari bodhana ragam abhogi ragam",
 ];
 
-const stuff = ["shankarabharanam", "mohanam"];
+const stuff = ["shankarabharanam", "mohanam", "abhogi"];
 
 var newStuff = Array.from(contentContainer.querySelectorAll("*[id]"));
 var contentContainerHtml = contentContainer.innerHTML;
 
+function slowAnimateBtn(element) {
+  element.style.borderRadius = "15px";
+  setTimeout(() => {
+    element.style.transition = ".3s";
+    element.style.borderRadius = "50%";
+    setTimeout(() => {
+      element.style.transition = "0.2s";
+    }, 300);
+  }, 200);
+}
+
 function search(event, fromForm) {
+  slowAnimateBtn(document.getElementById("search-btn"))
+  
+  searchbarM.value = searchbar.value;
+
   if (fromForm == true) {
     event.preventDefault();
   }
@@ -180,7 +233,8 @@ function search(event, fromForm) {
   }
 
   contentContainer.innerHTML =
-    "<center id='search-results-banner'>Search Results</center>" + text;
+    `<center title="Go back" id='search-results-banner' onclick='goBack()'><svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px" height="24px" viewBox="0 -960 960 960" width="24px" fill="#4a20d5"><path d="m313-440 196 196q12 12 11.5 28T508-188q-12 11-28 11.5T452-188L188-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l264-264q11-11 27.5-11t28.5 11q12 12 12 28.5T508-715L313-520h447q17 0 28.5 11.5T800-480q0 17-11.5 28.5T760-440H313Z"/></svg>Search Results</center>` +
+    text;
   console.log(text);
   const searchResultsBanner = document.getElementById(
     "search-results-banner",
@@ -195,6 +249,8 @@ function search(event, fromForm) {
 // mobile search
 
 function searchM(event, fromForm) {
+  searchbar.value = searchbarM.value;
+
   if (fromForm == true) {
     event.preventDefault();
   }
@@ -206,7 +262,7 @@ function searchM(event, fromForm) {
   }
 
   searchbarValue = document.getElementById("searchbarM").value;
-  searchbar.blur();
+  searchbarM.blur();
   window.location.hash = "#search";
 
   if (searchbarValue == "") {
@@ -245,7 +301,8 @@ function searchM(event, fromForm) {
   }
 
   contentContainer.innerHTML =
-    "<center id='search-results-banner'>Search Results</center>" + text;
+    `<center title="Go back" id='search-results-banner' onclick='goBack()'><svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px" height="24px" viewBox="0 -960 960 960" width="24px" fill="#4a20d5"><path d="m313-440 196 196q12 12 11.5 28T508-188q-12 11-28 11.5T452-188L188-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l264-264q11-11 27.5-11t28.5 11q12 12 12 28.5T508-715L313-520h447q17 0 28.5 11.5T800-480q0 17-11.5 28.5T760-440H313Z"/></svg>Search Results</center>` +
+    text;
   console.log(text);
   const searchResultsBanner = document.getElementById(
     "search-results-banner",

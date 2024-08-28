@@ -7,6 +7,12 @@ html {
   scroll-padding-top: 75px;
 }
 
+::selection {
+  border-radius: 5px;
+  background-color: #4a20d5;
+  color: white;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -157,7 +163,7 @@ ul li {
   line-height: 30px;
   background: maroon;
   z-index: 7;
-  box-shadow: 5px 0 7.5px lightgray;
+  box-shadow: 5px 0 7.5px rgba(0, 0, 0, .25);
 }
 
 .bold-selected {
@@ -172,7 +178,7 @@ ul li {
   border: none;
   padding: 10px;
   line-height: 30px;
-  box-shadow: 5px 0 7.5px lightgray;
+  box-shadow: 5px 0 7.5px rgba(0, 0, 0, .25);
   overflow-y: auto;
 }
 
@@ -215,7 +221,7 @@ ul li {
   position: fixed;
   z-index: 1;
   display: none;
-  box-shadow: 0 5px 7.5px lightgray;
+  box-shadow: 0 5px 7.5px rgba(0, 0, 0, .25);
   padding: 10px;
 }
 
@@ -225,6 +231,7 @@ ul li {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .big-heading {
@@ -257,33 +264,54 @@ ul li {
 
 .searchbar {
   width: calc(100% - 85px);
+  max-width: calc(100% - 85px);
   padding: 10px;
   border-radius: 50px;
   border: 2px solid lightgray;
-  box-shadow: 0.25px 0.25px 7.5px lightgray;
+  box-shadow: 0.25px 0.25px 7.5px rgba(0, 0, 0, .25);
+  padding-right: 0;
+  transition: .2s;
+}
+
+.searchbar:hover {
+  border-color: maroon;
 }
 
 input::-webkit-calendar-picker-indicator {
-  opacity: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+input:focus {
+  outline: none;
+  border-color: maroon;
+  box-shadow: 0.25px 0.25px 7.5px rgba(128, 0, 0, .75);
 }
 
 .search-btn {
   /* width: 85px; */
   background: #4a20d5;
   color: white;
-  border-radius: 50px;
+  border-radius: 100%;
   padding: 11px;
+  padding-left: 15px;
+  padding-right: 15px;
   transition: 0.2s;
   border: none;
   cursor: pointer;
 }
 
+/* .search-btn:active {
+  border-radius: 10px;
+}
+ */
 .search-btn:hover {
   background: #2e77d6;
 }
 
 .sidebar-search {
   margin-bottom: 5px;
+  justify-content: center;
 }
 
 .search-container {
@@ -315,6 +343,11 @@ input::-webkit-calendar-picker-indicator {
   gap: 10px;
 }
 
+.print-pdf:active {
+  transition: 0.2s;
+  border-radius: 10px;
+}
+
 .print-pdf:hover {
   background-color: rgb(128, 0, 0, .25);
 }
@@ -334,7 +367,7 @@ input {
 }
 
 .blue-button {
-  background-color: rgb(74, 32, 213, .15);
+  background-color: #e4def9;
   color: #4a20d5;
   padding: 11px;
   cursor: pointer;
@@ -347,17 +380,29 @@ input {
 }
 
 .blue-button:hover {
-  background-color: rgb(74, 32, 213, .25);
+  background-color: #d2c7f4;
 }
 
 #search-results-banner {
   color: #4a20d5;
-  background-color: rgba(74, 32, 213, .15);
+  background-color: #e4def9;
+  transition: .2s;
   text-align: center;
   width: 100%;
   padding: 10px;
   margin-bottom: 5px;
   border-radius: 1000000000000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: sticky;
+  top: 85px;
+  z-index: 1000000000000000000000000000000000;
+}
+
+#search-results-banner:hover {
+  background-color: #d2c7f4;
 }
 
 .song-section-split {
@@ -373,6 +418,7 @@ input {
 @media only screen and (max-width: 600px) {
   #search-results-banner {
     border-radius: 0 0 1000000000000px 1000000000000px;
+    top: 125px;
   }
 
   header nav {

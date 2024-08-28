@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="maroon" />
-    <title>Songs - Kavithaalaya Music</title>
+    <title>Varnams - Kavithaalaya Music</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -61,15 +61,15 @@
         </div>
       </header>
       <div class="mobile-sidebar-selector">
-        <form class="search-container" onsubmit="searchM(event); return false">
-          <input name="q" class="searchbar" type="text" id="searchbarM" list="q" placeholder="Search Varnams…" onfocus="window.location.hash = 'search';">
+        <form class="search-container" onsubmit="searchM(event); return false" autocomplete="off">
+          <input name="q" class="searchbar" type="text" id="searchbarM" list="q" placeholder="Search Varnams…" onfocus="window.location.hash = 'search'; document.getElementById('sidebar-selector-text').style.display = 'none'" onblur="document.getElementById('sidebar-selector-text').style.display = 'flex'">
           <datalist id="q">
             <option>Shankarabharanam</option>
             <option>Mohanam</option>
-            <!-- <option>Varnam 3</option>
-            <option>Varnam 4</option>
-            <option>Varnam 5</option>
-            <option>Varnam 6</option>
+            <option>Abhogi</option>
+            <option>Hamsadhwani</option>
+            <option>Saveri</option>
+            <!-- <option>Varnam 6</option>
             <option>Varnam 7</option>
             <option>Varnam 8</option>
             <option>Varnam 9</option>
@@ -80,7 +80,7 @@
           </datalist>
         <button class="search-btn" type="submit" onclick="searchM(event);"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></button>
         </form>
-        <p class="blue-button sidebar-selector-text" onclick="toggleMobileMenu(document.getElementById ('sidebar'));">Catalog <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#4a20d5"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7 10l5 5 5-5H7z"/></svg></p>
+        <p class="blue-button sidebar-selector-text" onclick="toggleMobileMenu(document.getElementById ('sidebar'));" id="sidebar-selector-text">Catalog <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#4a20d5"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7 10l5 5 5-5H7z"/></svg></p>
         </p>
       </div>
 
@@ -89,14 +89,14 @@
           class="search-container sidebar-search"
           onsubmit="search(event); return false"
         >
-          <input name="q" class="searchbar" type="text" id="searchbar" list="q" placeholder="Search Varnams…" onfocus="window.location.hash = 'search';">
+          <input name="q" class="searchbar" type="text" id="searchbar" list="q" placeholder="Search Varnams…" onfocus="window.location.hash = 'search';" autocomplete="off">
           <datalist id="q">
             <option>Shankarabharanam</option>
             <option>Mohanam</option>
-            <!-- <option>Varnam 3</option>
-            <option>Varnam 4</option>
-            <option>Varnam 5</option>
-            <option>Varnam 6</option>
+            <option>Abhogi</option>
+            <option>Hamsadhwani</option>
+            <option>Saveri</option>
+            <!-- <option>Varnam 6</option>
             <option>Varnam 7</option>
             <option>Varnam 8</option>
             <option>Varnam 9</option>
@@ -105,7 +105,7 @@
             <option>Varnam 12</option>
             <option>Varnam 13</option> -->
           </datalist>
-          <button class="search-btn" type="submit" onclick="search(event);">
+          <button class="search-btn" id="search-btn" type="submit" onclick="search(event);">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="26px"
@@ -126,10 +126,10 @@
 
         <div class="section" onclick="goTo('shankarabharanam')">Shankarabharanam</div>
         <div class="section" onclick="goTo('mohanam')">Mohanam</div>
-        <!-- <div class="section" onclick="goTo('varnam3')">Varnam 3</div>
-        <div class="section" onclick="goTo('varnam4')">Varnam 4</div>
-        <div class="section" onclick="goTo('varnam5')">Varnam 5</div>
-        <div class="section" onclick="goTo('varnam6')">Varnam 6</div>
+        <div class="section" onclick="goTo('abhogi')">Abhogi</div>
+        <div class="section" onclick="goTo('hamsadhwani')">Hamsadhwani</div>
+        <div class="section" onclick="goTo('saveri')">Saveri</div>
+        <!-- <div class="section" onclick="goTo('varnam6')">Varnam 6</div>
         <div class="section" onclick="goTo('varnam7')">Varnam 7</div>
         <div class="section" onclick="goTo('varnam8')">Varnam 8</div>
         <div class="section" onclick="goTo('varnam9')">Varnam 9</div>
@@ -156,7 +156,7 @@
         <div id="shankarabharanam">
           <h1 class="heading">Shankarabharanam</h1>
           <center><h1>29th Melakarta</h1></center><br>
-          <span class="song-section">
+          
               <p>Talam : Adi <br>
                 Aro: SRGMPDNṠ <br>
                 Avo: ṠNDPMRGRS<br>
@@ -168,16 +168,16 @@
 
           <br>
           <section>
-            <h2>Song Recording</h2><br>
+            <h2></h2><br>
 
             <p>Pallavi, Anupallavi, Muktayi swaram:</p>
             <audio controls class="audio" style="width: 100%;">
-              <source src="recordings/shankarabharanam1.m4a" type="audio/mpeg">
+              <source src="recordings/shankarabharanam1.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
             <br><br><p>Sahityam: pallavi, anupallavi</p><br>
             <audio controls class="audio" style="width: 100%;">
-              <source src="recordings/shankarabharanam2.m4a" type="audio/mpeg">
+              <source src="recordings/shankarabharanam2.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
           </section>
@@ -188,80 +188,292 @@
         <div id="mohanam">
           <h1 class="heading">Mohanam</h1>
           <center><h1>28th Melakarta</h1></center><br>
-          <span class="song-section">
+          
               <p>Talam : Adi <br>
                 Aro: SRGPDṠ <br>
                 Avo: ṠDPGRS<br>
-                Composer: Ramnad Shrinivasa Iyengar<br><br>
-                <br>
+                Composer: Ramnad Shrinivasa Iyengar<br>
               </p>
 
           <br>
           <section>
-            <h2>Song Recording</h2><br>
+            <h2><b>Song Recording:</b></h2><br>
 
             <p>pallavi</p>
             <audio controls class="audio" style="width: 100%;">
-              <source src="recordings/mohanam1.m4a" type="audio/mpeg">
+              <source src="recordings/mohanam1.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
             <p>anupallavi, muktayi swaram, sahityam</p>
             <audio controls class="audio" style="width: 100%;">
-              <source src="recordings/mohanam2.m4a" type="audio/mpeg">
+              <source src="recordings/mohanam2.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
             <p>charanam, chittai swaras 1, 2</p>
             <audio controls class="audio" style="width: 100%;">
-              <source src="recordings/mohanam3.m4a" type="audio/mpeg">
+              <source src="recordings/mohanam3.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
             <p>chittai swaras 3, 4</p>
             <audio controls class="audio" style="width: 100%;">
-              <source src="recordings/mohanam4.m4a" type="audio/mpeg">
+              <source src="recordings/mohanam4.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
           </section>
 
           <br><br>
         </div>
+
+        <div id="abhogi">
+          <h1 class="heading">Abhogi</h1>
+          <center><h1>22nd Mela Janyam</h1></center><br>
+          
+              <p>Talam : Adi <br>
+                Aro: SRGMDṠ <br>
+                Avo: ṠDMGRS<br>
+                Composer: Patnam Subramanya Iyer<br>
+              </p>
+
+          <br>
+          <section>
+            <h2><b>Song Recording:</b></h2><br>
+
+            <p>Pallavi and Anupallavi Swaram</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/abhogi1.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Muktayi Swaram</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/abhogi2.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Pallavi and Anupallavi Sahithyam</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/abhogi3.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Charanam and Chittai Swaras 1-4</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/abhogi4.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </section>
+
+          <br><br>
+        </div>
+
+
+        
+        <div id="hamsadhwani">
+          <h1 class="heading">Hamsadhwani</h1>
+          <center><h1>29th Mela Janyam</h1></center><br>
+          
+              <p>Talam: Adi <br>
+                Aro: SRGPNṠ <br>
+                Avo: ṠNPGRS<br>
+                Composer: Manambuchavadi Venkatasubbaiyer
+                <br>
+              </p>
+
+          <br>
+          <section>
+            <h2><b>Song Recording:</b></h2><br>
+
+            <p>Pallavi, Anupallavi, and Muktayi Swaram</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/Hamsadhwani1.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Pallavi and Anupallavi Sahithyam</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/Hamsadhwani2.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Charanam and Chittai Swaras 1-2</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/Hamsadhwani3.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Chittai Swaras 3-4</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/Hamsadhwani4.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </section>
+
+          <br><br>
+        </div>
+
+
+        
+        <div id="vasantha">
+          <h1 class="heading">Vasantha</h1>
+          <center><h1>17th Mela Janyam</h1></center><br>
+          
+              <p>Talam: Adi <br>
+                Aro: SGMDNṠ <br>
+                Avo: ṠNDMGRS<br>
+                Composer: Tachchur Singarachari
+                <br>
+              </p>
+
+          <br>
+          <section>
+            <h2><b>Song Recording:</b></h2><br>
+
+            <p>Pallavi, Anupallavi, and Muktayi Swaram</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/vasantha1.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Pallavi and Anupallavi Sahithyam</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/vasantha2.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Charanam and Chittai Swaras 1-2</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/vasantha3.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Chittai Swaras 1-4</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/vasantha4.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </section>
+
+          <br><br>
+        </div>
+
+
+        
+        <div id="saveri">
+          <h1 class="heading">Saveri</h1>
+          <center><h1>15th Mela Janyam</h1></center><br>
+          
+              <p>Talam: Adi <br>
+                Aro: SRMPDṠ <br>
+                Avo: ṠNDPMGRS<br>
+                Composer: Kotthavasal Venkatrama Iyer
+                <br>
+              </p>
+
+          <br>
+          <section>
+            <h2><b>Song Recording:</b></h2><br>
+
+            <p>Pallavi, Anupallavi, and Muktayi Swaram</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/Saveri1.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Pallavi Sahithyam</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/Saveri2.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Anupallavi Sahithyam</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/Saveri5.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Charanam and Chittai Swaras 1-2</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/Saveri3.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Chittai Swaras 3-4</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/Saveri4.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </section>
+
+          <br><br>
+        </div>
+
+        
+        <div id="Kamboji">
+          <h1 class="heading">Kamboji</h1>
+          <center><h1>28th Mela Janyam</h1></center><br>
+
+              <p>Talam: Adi <br>
+                Aro: SRGMPDṠ <br>
+                Avo: ṠNDPMGRS<br>
+                Composer: Violin Ponnuswami
+                <br>
+              </p>
+
+          <br>
+          <section>
+            <h2><b>Song Recording:</b></h2><br>
+
+            <p>Pallavi, Anupallavi, and Muktayi Swaram</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/Kamboji1.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Pallavi and Anupallavi Sahithyam</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/Kamboji2.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Charanam and Chittai Swaras 1-2</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/Kamboji3.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <p>Chittai Swaras 3-5</p>
+            <audio controls class="audio" style="width: 100%;">
+              <source src="recordings/Kamboji4.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </section>
+
+          <br><br>
+          <% print("hello") %>
+        </div>
+        
         <!-- <div id="songN">
         <h1 class="heading">SongN</h1><br>
 
         <br>
         <section>
-          <h2>Song Recording</h2><br>
+          <h2><b>Song Recording:</b></h2><br>
           <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/audio-file.m4a" type="audio/mpeg">
+            <source src="recordings/audio-file.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
         <br>
-        <span class="song-section">
+        
           <h1>pallavi</h1>
           <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
             lyrics lyrics
             lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics
       </p>
         </span><br>
-        <span class="song-section">
+        
           <h1>anupallavi</h1>
           <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
             lyrics lyrics
             lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
         </span><br>
-        <span class="song-section">
+        
           <h1>charanam 1</h1>
           <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
             lyrics lyrics
             lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
         </span><br>
-        <span class="song-section">
+        
           <h1>charanam 2</h1>
           <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
             lyrics lyrics
             lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics lyrics lyrics</p>
         </span><br>
-        <span class="song-section">
+        
           <h1>charanam 3</h1>
           <p>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics lyrics lyrics lyrics lyrics<br>lyrics lyrics
             lyrics lyrics

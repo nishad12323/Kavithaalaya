@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /songs/songs/
+Allow: /songs/geethams/
+Allow: /songs/varnams/
+Disallow: /songs/
+Disallow: /policies/
+Disallow: /binder/
+Disallow: /binder.html

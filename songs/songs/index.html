@@ -51,17 +51,18 @@
       </div>
 
     </header>
-    <div class="mobile-sidebar-selector">
-      <form class="search-container" onsubmit="searchM(event); return false">
-        <input name="q" class="searchbar" type="text" id="searchbarM" list="q" placeholder="Search Songs…" onfocus="window.location.hash = 'search';">
-        <datalist id="q">
-          <option>Bhagyada Lakshmi</option>
+            <div class="mobile-sidebar-selector">
+              <form class="search-container" onsubmit="searchM(event); return false" autocomplete="off">
+                <input name="q" class="searchbar" type="text" id="searchbarM" list="q" placeholder="Search Songs…" onfocus="window.location.hash = 'search'; document.getElementById('sidebar-selector-text').style.display = 'none'" onblur="document.getElementById('sidebar-selector-text').style.display = 'flex'">
+                <datalist id="q">
+            <option>Bhagyada Lakshmi</option>
           <option>Devi Bhajan</option>
           <option>Devi Neeye Thunai</option>
           <option>Durga Lakshmi</option>
           <option>Gajanana</option>
           <option>Gajavadana</option>
           <option>Hanuman Bhajan</option>
+          <option>Jaya Janardhana</option>
           <option>Mayil meedhu vilayadum</option>
           <option>Mythili</option>
           <option>Naarayana</option>
@@ -76,15 +77,16 @@
           <option>Unai marandhariyen</option>
           <option>Vel Vel</option>
           <option>Vittal Bhajan</option>
-        </datalist>
-        <button class="search-btn" type="submit" onclick="searchM(event);"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></button>
-      </form>
-      <p class="blue-button sidebar-selector-text" onclick="toggleMobileMenu(document.getElementById ('sidebar'));">Catalog <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#4a20d5"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7 10l5 5 5-5H7z"/></svg></p>
+          </datalist>
+          <button class="search-btn" type="submit" onclick="searchM(event);" title="Search"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></button>
+        </form>
+      </center>
+      <p class="blue-button sidebar-selector-text" onclick="toggleMobileMenu(document.getElementById ('sidebar'));" title="View a list of songs" id="sidebar-selector-text">Catalog <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#4a20d5"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7 10l5 5 5-5H7z"/></svg></p>
     </div>
 
 
     <dialog open class="sidebar" id="sidebar">
-      <form class="search-container sidebar-search" onsubmit="search(event, true); return false">
+      <form class="search-container sidebar-search" onsubmit="search(event, true); return false" autocomplete="off">
         <input name="q" class="searchbar" type="text" id="searchbar" placeholder="Search Songs…" list="q" onfocus="window.location.hash = 'search';">
         <datalist id="q">
           <option>Bhagyada Lakshmi</option>
@@ -94,6 +96,7 @@
           <option>Gajanana</option>
           <option>Gajavadana</option>
           <option>Hanuman Bhajan</option>
+          <option>Jaya Janardhana</option>
           <option>Mayil meedhu vilayadum</option>
           <option>Mythili</option>
           <option>Naarayana</option>
@@ -110,94 +113,98 @@
           <option>Vittal Bhajan</option>
  
         </datalist>
-        <button class="search-btn" type="submit" onclick="search(1, false);"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#FFFFFF"><path d="M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></button>
+        <button class="search-btn" type="submit" onclick="search(1, false);" title="Search"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#FFFFFF"><path d="M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></button>
       </form>
 
-      <p class="songs-header section" onclick="location.replace('/songs/geethams/')">Geethams</p>
-      <p class="songs-header section" onclick="location.replace('/songs/varnams/')">Varnams</p>
-      <p class="songs-header section selected" onclick="location.replace('/songs/songs/')">Songs</p><br>
+      <p class="songs-header section" onclick="location.replace('/songs/geethams/')" tabindex="0">Geethams</p>
+      <p class="songs-header section" onclick="location.replace('/songs/varnams/')" tabindex="0">Varnams</p>
+      <p class="songs-header section selected" onclick="location.replace('/songs/songs/')" tabindex="0">Songs</p><br>
       <div class="section"
-        onclick="goTo('bhagyada lakshmi');">
+        onclick="goTo('bhagyada lakshmi');" tabindex="0">
         Bhagyada Lakshmi
       </div>
       <div class="section"
-        onclick="goTo('devi bhajan')">
+        onclick="goTo('devi bhajan')" tabindex="0">
         Devi Bhajan
       </div>
       <div class="section"
-        onclick="goTo('devi neeye thunai')">
+        onclick="goTo('devi neeye thunai')" tabindex="0">
         Devi Neeye Thunai
       </div>
       <div class="section"
-        onclick="goTo('durga lakshmi')">
+        onclick="goTo('durga lakshmi')" tabindex="0">
         Durga Lakshmi
       </div>
       <div class="section"
-        onclick="goTo('gajanana')">
+        onclick="goTo('gajanana')" tabindex="0">
         Gajanana
       </div>
       <div class="section"
-        onclick="goTo('gajavadana')">
+        onclick="goTo('gajavadana')" tabindex="0">
         Gajavadana
       </div>
       <div class="section"
-        onclick="goTo('hanuman bhajan')">
+        onclick="goTo('hanuman bhajan')" tabindex="0">
         Hanuman Bhajan
       </div>
       <div class="section"
-        onclick="goTo('mayil meedhu vilayadum')">
+        onclick="goTo('jaya janardhana')" tabindex="0">
+        Jaya Janardhana
+      </div>
+      <div class="section"
+        onclick="goTo('mayil meedhu vilayadum')" tabindex="0">
         Mayil meedhu vilayadum
       </div>
       <div class="section"
-        onclick="goTo('mythili')">
+        onclick="goTo('mythili')" tabindex="0">
         Mythili
       </div>
       <div class="section"
-        onclick="goTo('naarayana')">
+        onclick="goTo('naarayana')" tabindex="0">
         Naarayana
       </div>
       <div class="section"
-        onclick="goTo('nandalala')">
+        onclick="goTo('nandalala')" tabindex="0">
         Nandalala
       </div>
       <div class="section"
-        onclick="goTo('neeraja')">
+        onclick="goTo('neeraja')" tabindex="0">
         Neeraja
       </div>
       <div class="section"
-        onclick="goTo('note one shyamale')">
+        onclick="goTo('note one shyamale')" tabindex="0">
         Note one shyamale
       </div>
       <div class="section"
-        onclick="goTo('radhe')">
+        onclick="goTo('radhe')" tabindex="0">
         Radhe
       </div>
       <div class="section"
-        onclick="goTo('ramachandraya')">
+        onclick="goTo('ramachandraya')" tabindex="0">
         Ramachandraya
       </div>
       <div class="section"
-        onclick="goTo('rama rama')">
+        onclick="goTo('rama rama')" tabindex="0">
         Rama Rama
       </div>
       <div class="section"
-        onclick="goTo('ramanukku mannan mudi')">
+        onclick="goTo('ramanukku mannan mudi')" tabindex="0">
         Ramanukku Mannan Mudi
       </div>
       <div class="section"
-        onclick="goTo('saraswathi namosthuthe')">
+        onclick="goTo('saraswathi namosthuthe')" tabindex="0">
         Saraswathi Namosthuthe
       </div>
       <div class="section"
-        onclick="goTo('unai marandhariyen')">
+        onclick="goTo('unai marandhariyen')" tabindex="0">
         Unai marandhariyen
       </div>
       <div class="section"
-        onclick="goTo('vel vel')">
+        onclick="goTo('vel vel')" tabindex="0">
         Vel Vel
       </div>
       <div class="section"
-        onclick="goTo('vittal bhajan')">
+        onclick="goTo('vittal bhajan')" tabindex="0">
         Vittal Bhajan
       </div>
  
@@ -205,7 +212,7 @@
     <span id="up"></span>
     <div class="content-container">
       <div id="bhagyada lakshmi">
-        <h1 class="heading">Bhagyada Lakshmi <button class="print-pdf">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
+        <h1 class="heading">Bhagyada Lakshmi <button class="print-pdf" onclick="printPDF('PDFs/Bhagyada Lakshmi.pdf')">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
         <p>Shree ragam (Adi talam)<br><br>
           Aro: SR1M1PN2Ṡ <br>
           Avo: ṠN1PDNPM1R1G2R1S</p><br>
@@ -213,8 +220,8 @@
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/bhagyada.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/bhagyada.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -260,8 +267,8 @@
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/ambaParameshwari.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/ambaParameshwari.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -288,13 +295,13 @@
         <section>
           <h2>Song Recordings</h2><br>
           <p>Pallavi:</p>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/devi neeye thunai1.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/devi neeye thunai1.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio><br>
           <p>Anupallavi and Charanam:</p>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/devi neeye thunai2.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/devi neeye thunai2.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -335,7 +342,7 @@
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
             <source src="audio-file.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
@@ -359,7 +366,7 @@
         <br>
         <section>
           <h2>Song Recording:</h2><br>
-          <audio controls class="audio" style="width: 100%;">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
             <source src="audio-file.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
@@ -383,13 +390,13 @@
         <br><br>
       </div>
       <div id="gajavadana">
-        <h1 class="heading">Gajavadana <button class="print-pdf">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
+        <h1 class="heading">Gajavadana <button class="print-pdf" onclick="printPDF('PDFs/Gajavadana Karuna.pdf')">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
 
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/gajavadana.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/gajavadana.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -425,7 +432,7 @@
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
             <source src="audio-file.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
@@ -458,21 +465,84 @@
         </span><br>
 
         <br><br>
+
+        <div id="jaya janardhana">
+          <h1 class="heading">Jaya Janardhana<button class="print-pdf" onclick="printPDF('PDFs/Jaya Janardhana.pdf')">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
+
+          <br>
+          <section>
+            <h2>Song Recordings</h2><br>
+            <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+              <source src="recordings/jayajanarthana1.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            
+            <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+              <source src="recordings/jayajanarthana2.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </section>
+          <br>
+          <span class="song-section">
+            <p>Jaya Janardhana Krishna Radhika Pathe<br>
+              Jana vimochana Krishna Janma Mochana<br>
+              Garuda﻿ Vahana Krishna Gopika Pathe<br>
+              Nayana mohana Krishna Neeajekshana<br><br>
+
+              Sujana Bandhava Krishna Sundarakruthe<br>
+              Madana Komala Krishna Madhava Hare<br>
+              Vasumati Pathe Krishna Vasavanuja<br><br>
+
+              VaraguNakara Krishna Vaishnavakruthe<br>
+              Suruchiranana Krishna Shouryavaridhe<br>
+              Murahara Vibho Krishna mukthidayaka<br>
+              Vimalapalaka Krishna Vallabhipathe<br>
+              Kamalalochana Krishna kamyadayaka<br><br>
+
+              Vimalagatrane Krishna Bhaktavatsala<br>
+              Charana pallavam Krishna Karuna Komalam<br>
+              KuvalaikshaNa Krishna komalaakruthe<br>
+              tava padambujam Krishna sharanamashraye<br>
+              Bhuvana nayaka Krishna pavanakruthe<br>
+              GuNagaNojwala Krishna Nalinalochana<br>
+              Pranayavaridhe Krishna guNagaNakara<br>
+              damasodara Krishna deena vatsala<br><br>
+
+              Kamasundara Krishna pahi sarvada<br>
+              Narakanashana Krishna Narasahayaka<br>
+              Devaki sutha Krishna KaruNyambhude<br>
+              Kamsanashana Krishna Dwaraksthitha<br>
+              Pavanatmaka Krishna dehi mangaLam<br>
+              Tvatpadambujam Krishna Shyama komalam<br>
+              Bhaktavatsala Krishna Kamyadayaka<br>
+              Palisennanu Krishna Srihari namo<br><br>
+
+              Bhaktadasa naa Krishna Harasu Nee sada<br>
+              Kadu ninthena Krishna Salaheya Vibho<br>
+              Garuda vahan Krishna Gopika Pathe<br>
+              Nayana mohana Krishna Neerajekshana<br>
+              <br>
+
+            </p>
+          </span><br>
+
+          <br><br>
+          
       </div>
       <div id="mayil meedhu vilayadum">
-        <h1 class="heading">Mayil meedhu vilayadum <button class="print-pdf">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
+        <h1 class="heading">Mayil meedhu vilayadum <button class="print-pdf" onclick="printPDF('PDFs/Mayil meedhu vilayadum.pdf')">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
 
         <br>
         <section>
           <h2>Song Recordings</h2><br>
           <p>Pallavi, Anupallavi:</p>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/mayil meedhu vilayadum1.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/mayil meedhu vilayadum1.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio><br>
           <p>Charanam and Chittai Swaram:</p>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/mayil meedhu vilayadum2.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/mayil meedhu vilayadum2.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -524,7 +594,7 @@
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
             <source src="audio-file.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
@@ -554,24 +624,24 @@
 
       </div>
       <div id="naarayana">
-        <h1 class="heading">Naarayana <button class="print-pdf">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
+        <h1 class="heading">Naarayana <button class="print-pdf" onclick="printPDF('PDFs/Naarayana.pdf')">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
 
         <br>
         <section>
           <h2>Song Recordings</h2><br>
           <p>Pallavi:</p>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/naarayana1.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/naarayana1.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
           <p>Charanam1:</p>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/naarayana2.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/naarayana2.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
           <p>Charanam2:</p>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/naarayana3.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/naarayana3.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -610,8 +680,8 @@
         <section>
           <br>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/nandalala.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/nandalala.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -638,8 +708,8 @@
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="nandalala.opus" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/nandalala.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -671,7 +741,7 @@
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
             <source src="audio-file.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
@@ -692,13 +762,13 @@
         <br><br>
       </div>
       <div id="radhe">
-        <h1 class="heading">Radhe Bhajan – Eka Thalam <button class="print-pdf">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
+        <h1 class="heading">Radhe Radhe Bhajan – Eka Thalam <button class="print-pdf">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
 
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/radhae.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/radheradhe.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -724,13 +794,13 @@
         <br><br>
       </div>
       <div id="ramachandraya">
-        <h1 class="heading">Ramachandraya <button class="print-pdf">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
+        <h1 class="heading">Ramachandraya <button class="print-pdf" onclick="printPDF('PDFs/RAMACHANDRAYA.pdf')">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
 
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/ramachandraya.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/ramachandraya.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -762,13 +832,13 @@
         <br><br>
       </div>
       <div id="rama rama">
-        <h1 class="heading">Rama Rama <button class="print-pdf">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
+        <h1 class="heading">Rama Rama <button class="print-pdf" onclick="printPDF('PDFs/Rama Rama Rama Rama.pdf')">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
 
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/rama rama.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/rama rama.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -813,19 +883,19 @@
         <br><br>
       </div>
       <div id="ramanukku mannan mudi">
-        <h1 class="heading">Ramanukku Mannan Mudi <button class="print-pdf">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
+        <h1 class="heading">Ramanukku Mannan Mudi <button class="print-pdf" onclick="printPDF('PDFs/Ramanakku Mannan Mudi.pdf')">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
 
         <br>
         <section>
           <h2>Song Recordings</h2><br>
           <p>Pallavi:</p>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/ramanukkuMannanMudi1.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/ramanukkuMannanMudi1.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
           <p>Anupallavi, Charanam:</p>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/ramanukkuMannanMudi2.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/ramanukkuMannanMudi2.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -852,13 +922,13 @@
         <br><br>
       </div>
       <div id="saraswathi namosthuthe">
-        <h1 class="heading">Saraswathi Namosthuthe <button class="print-pdf">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
+        <h1 class="heading">Saraswathi Namosthuthe <button class="print-pdf" onclick="printPDF('PDFs/Saraswathi Namosthuthe.pdf')">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
 
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/saraswathiNamosthuthe.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/saraswathiNamosthuthe.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -902,13 +972,13 @@
         <section>
           <h2>Song Recordings</h2><br>
           <p>Pallavi:</p>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/unai marandhariyen1.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/unai marandhariyen1.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
           <p>Anupallavi and Charanam:</p>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/unai marandhariyen2.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/unai marandhariyen2.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -948,7 +1018,7 @@
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
             <source src="audio-file.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
@@ -972,13 +1042,13 @@
         <br><br>
       </div>
       <div id="vittal bhajan">
-        <h1 class="heading">Vittal Bhajan - Eka Thalam <button class="print-pdf">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
+        <h1 class="heading">Vittal Bhajan - Eka Thalam <button class="print-pdf" onclick="printPDF('PDFs/Vittala Bhajan Lyrics.pdf')">Print<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#800000"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M18,7V4c0-0.55-0.45-1-1-1H7C6.45,3,6,3.45,6,4v3H18z"/><path d="M19,8H5c-1.66,0-3,1.34-3,3v5c0,0.55,0.45,1,1,1h3v2c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2v-2h3c0.55,0,1-0.45,1-1v-5 C22,9.34,20.66,8,19,8z M16,19H8v-4h8V19z M18,12.5c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,12.5,18,12.5z"/></g></g></svg></span></button></h1><br>
 
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/vittal.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/vittal.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
@@ -1005,8 +1075,8 @@
         <br>
         <section>
           <h2>Song Recording</h2><br>
-          <audio controls class="audio" style="width: 100%;">
-            <source src="recordings/audio-file.m4a" type="audio/mpeg">
+          <audio controls class="audio" style="width: 100%;" controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="recordings/audio-file.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </section>
