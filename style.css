@@ -297,6 +297,50 @@ footer {
   text-decoration: underline;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background: rgb(41, 0, 0);
+  }
+
+  img {
+    border: 5px solid white;
+  }
+
+  p {
+    color: white;
+  }
+
+  .music-school {
+    color: maroon;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  .link {
+    color: white;
+  }
+
+  .link:visited {
+    color: white;
+  }
+  
+  .heading-img {
+    opacity: 2;
+  }
+
+  svg {
+    filter: invert(8%) sepia(77%) saturate(5000%) hue-rotate(357deg) brightness(93%) contrast(112%);
+  }
+}
+
+@media screen and (max-width: 600px ) and (prefers-color-scheme: dark) {
+  .header-img-txt, .music-school {
+    color: white;
+  }
+}
+
 /* for phone */
 
 @media only screen and (max-width: 600px) {
@@ -354,10 +398,10 @@ footer {
 /* for tablet */
 
 @media only screen and (max-width: 900px) {
-  .register-on-heading {
-    /* font-size: 1rem; */
-  }
-
+  /* .register-on-heading {
+    font-size: 1rem;
+  } */
+  
   .content-container {
     margin: 0vw 5vw;
   }
