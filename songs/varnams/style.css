@@ -414,6 +414,80 @@ input {
   margin-top: 15px;
 }
 
+.mobile-sidebar-selector {
+  border-bottom: 3px solid white;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(21, 0, 0);
+  }
+
+  audio::-webkit-media-controls-panel{
+    background-color: white;
+    opacity: 100;
+  }
+
+  .audio {
+    opacity: 100;
+  }
+
+  .sidebar, .mobile-sidebar-selector {
+    border-color: rgb(41, 0, 0);
+    background-color: rgb(41, 0, 0);
+  }
+
+  .searchbar {
+    background-color: rgba(128, 0, 0, 0.35);
+    border-color: rgba(128, 0, 0, 0.0);
+    box-shadow: none;
+  }
+
+  * {
+    color: white;
+  }
+
+  .print-pdf {
+    background-color: rgba(128, 0, 0, 0.35);
+    color: rgb(236, 217, 217);
+  }
+
+  .section:hover {
+    background-color: rgba(128, 0, 0, 0.35);
+  }
+
+  .print-pdf svg {
+    filter: brightness(0) saturate(100%) invert(93%) sepia(4%) saturate(617%) hue-rotate(314deg) brightness(99%) contrast(87%);
+  }
+  .section {
+    color: white;
+    border-color: white;
+  }
+
+  .selected {
+    background-color: rgba(128, 0, 0, 0.35);
+    /* border-top: 3px solid rgb(128, 0, 0); */
+    color: rgb(236, 217, 217);
+    border-color: rgb(236, 217, 217);
+  }
+
+  .selected:hover {
+    background-color: rgb(61, 0, 0);
+  }
+
+  input::placeholder {
+    color: white;
+  }
+
+  .sidebar-selector-text > svg {
+    filter: none;
+  }
+
+  .sidebar-selector-text {
+    background-color: #210e5d;
+  }
+}
+
 /*For phone*/
 @media only screen and (max-width: 600px) {
   #search-results-banner {
@@ -432,7 +506,6 @@ input {
   .sidebar {
     translate: 0 50px;
     width: 100vw;
-    background-color: white;
     z-index: 1;
     transition: 0.2s;
   }
