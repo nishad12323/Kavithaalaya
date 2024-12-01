@@ -176,6 +176,7 @@ const keywords = [
   "gajanana talam adi talam",
   "gajavadana ragam shri ranjani ragam paapanaasam shivan talam adi talam",
   "hanuman bhajan jai jai hanuman talam eka talam",
+  "jaya janardhana ragam madhyamavati ragam talam adi talam",
   "mayil meedhu vilayadum talam adi talam ragam vasanthi ragam sathur karpagam",
   "saibhajan mythilipate talam eka talam",
   "naarayana ragam sudda dhanyaasi ragam talam adi talam",
@@ -183,8 +184,10 @@ const keywords = [
   "neeraja talam adi talam",
   "note one shyamale talam adi talam",
   "radhe radhe bhajan talam eka talam",
+  "ramachandraya janaka ragam kurinji ragam talam adi talam badraachala raamadaas",
   "rama rama ragam nilambari ragam neelambari ragam talam adi talam",
   "ramanukku mannan mudi",
+  "sami mayura giri saami mayura giri murugan tamil talam adi talam ragam khamas ragam kavi kunjara bharati",
   "saraswathi namosthuthe saraswathi namostute ragam saraswathi ragam talam roopaka talam",
   "unai marandhariyen ragam kalyana vasantham ragam talam adi talam devi b.a. chidambaram ba chidambaram",
   "vel vel vel vel talam eka talam ekam talam",
@@ -199,6 +202,7 @@ const stuff = [
   "gajanana",
   "gajavadana",
   "hanuman bhajan",
+  "jaya janardhana",
   "mayil meedhu vilayadum",
   "mythili",
   "naarayana",
@@ -206,8 +210,10 @@ const stuff = [
   "neeraja",
   "note one shyamale",
   "radhe",
+  "ramachandraya",
   "rama rama",
   "ramanukku mannan mudi",
+  "sami mayura",
   "saraswathi namosthuthe",
   "unai marandhariyen",
   "vel vel",
@@ -249,6 +255,7 @@ function search(event, fromForm) {
   contentContainer.innerHTML = contentContainerHtml;
 
   for (let i = 0; i < result.length; i++) {
+    console.log(i);
     var resultI = result[i];
     var indexOfResultIinKeywords = keywords.indexOf(resultI.toLowerCase());
     var idOfResultI = stuff[indexOfResultIinKeywords];
