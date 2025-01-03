@@ -19,12 +19,11 @@ function onlyPlayOneIn(container) {
         }
       }
     },
-    true,
+    true
   );
 }
 
 onlyPlayOneIn(contentContainer);
-
 
 contentContainer.addEventListener("click", () => {
   if (document.getElementById("menu-icon").classList.contains("open")) {
@@ -40,9 +39,9 @@ if (window.location.hash == "") {
   toggleMobileMenu(document.getElementById("sidebar"));
 }
 
-Array.from(document.querySelectorAll('audio')).forEach((element) => {
-  element.setAttribute('oncontextmenu', "return false;")
-})
+Array.from(document.querySelectorAll("audio")).forEach((element) => {
+  element.setAttribute("oncontextmenu", "return false;");
+});
 
 window.addEventListener("popstate", function (event) {
   // This function will be called when the user navigates back in history
@@ -71,7 +70,7 @@ function register() {
   r = window.open(
     "https://docs.google.com/forms/d/e/1FAIpQLSdOjRveBPyuYeAdD_xUUSfCMn5__BT8JZ_IWFuc15mDIxQFqw/viewform",
     "",
-    `width=${window.screen.width * 0.7},height=${window.screen.height * 0.7}`,
+    `width=${window.screen.width * 0.7},height=${window.screen.height * 0.7}`
   );
 
   r.document
@@ -142,17 +141,19 @@ function toggleMobileMenu(menu) {
     menu == document.getElementById("sidebar") &&
     document.getElementById("sidebar").classList.contains("open")
   ) {
-    document.querySelector(".sidebar-selector-text").innerHTML =
-      `Catalog <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="28px" fill="#4a20d5"><path d="m280-400 200-200.67L680-400H280Z"/></svg>`;
+    document.querySelector(
+      ".sidebar-selector-text"
+    ).innerHTML = `Catalog <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="28px" fill="#4a20d5"><path d="m280-400 200-200.67L680-400H280Z"/></svg>`;
   } else {
-    document.querySelector(".sidebar-selector-text").innerHTML =
-      `Catalog <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="28px" fill="#4a20d5"><path d="M480-360 280-559.33h400L480-360Z"/></svg>`;
+    document.querySelector(
+      ".sidebar-selector-text"
+    ).innerHTML = `Catalog <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="28px" fill="#4a20d5"><path d="M480-360 280-559.33h400L480-360Z"/></svg>`;
   }
 }
 
 function printPDF(fileName) {
   const isMobile = navigator.userAgentData.mobile;
-  
+
   if (isMobile) {
     window.open(fileName);
   } else {
@@ -177,9 +178,10 @@ const keywords = [
   "gajavadana ragam shri ranjani ragam paapanaasam shivan talam adi talam",
   "hanuman bhajan jai jai hanuman talam eka talam",
   "jaya janardhana ragam madhyamavati ragam talam adi talam",
+  "mahalakshmi jagan mata ragam poorvikalyani ragam talam adi talam",
   "mayil meedhu vilayadum talam adi talam ragam vasanthi ragam sathur karpagam",
   "saibhajan mythilipate talam eka talam",
-  "naarayana ragam sudda dhanyaasi ragam talam adi talam",
+  "narayana naarayana ragam sudda dhanyaasi ragam talam adi talam",
   "nandalala talam eka talam ekam talam",
   "neeraja talam adi talam",
   "note one shyamale talam adi talam",
@@ -203,6 +205,7 @@ const stuff = [
   "gajavadana",
   "hanuman bhajan",
   "jaya janardhana",
+  "mahalakshmi jagan mata",
   "mayil meedhu vilayadum",
   "mythili",
   "naarayana",
@@ -277,7 +280,7 @@ function search(event, fromForm) {
     text;
   console.log(text);
   const searchResultsBanner = document.getElementById(
-    "search-results-banner",
+    "search-results-banner"
   ).style;
   searchResultsBanner.width = "100px";
   searchResultsBanner.textAlign = "center";
@@ -345,7 +348,7 @@ function searchM(event, fromForm) {
     text;
   console.log(text);
   const searchResultsBanner = document.getElementById(
-    "search-results-banner",
+    "search-results-banner"
   ).style;
   searchResultsBanner.width = "100px";
   searchResultsBanner.textAlign = "center";
